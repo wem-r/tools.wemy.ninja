@@ -40,15 +40,15 @@ jobs:
       - name: Unit tests of the tools' logic
         run: npm test
 
-      - name: Fetch CyberChef (official release, served from /cyberchef/)
+      - name: Fetch CyberChef (official release, served from /vendor/cyberchef/)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release download "$CYBERCHEF_VERSION" -R gchq/CyberChef -p '*.zip' -D /tmp/cc
-          mkdir -p static/cyberchef
-          unzip -q /tmp/cc/*.zip -d static/cyberchef
-          mv static/cyberchef/CyberChef_*.html static/cyberchef/index.html
-          ls static/cyberchef
+          mkdir -p static/vendor/cyberchef
+          unzip -q /tmp/cc/*.zip -d static/vendor/cyberchef
+          mv static/vendor/cyberchef/CyberChef_*.html static/vendor/cyberchef/index.html
+          ls static/vendor/cyberchef
 
       - id: pages
         uses: actions/configure-pages@v6

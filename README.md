@@ -36,8 +36,8 @@ npm run serve   # http://localhost:1313/
 ```
 
 CyberChef is not in git: the deploy workflow downloads the official GCHQ release (`CYBERCHEF_VERSION` in
-`.github/workflows/deploy.yml`) into `static/cyberchef/`. To have it locally:
-`gh release download v11.5.0 -R gchq/CyberChef -p '*.zip' -D /tmp/cc && unzip /tmp/cc/*.zip -d static/cyberchef && mv static/cyberchef/CyberChef_*.html static/cyberchef/index.html`.
+`.github/workflows/deploy.yml`) into `static/vendor/cyberchef/`. To have it locally:
+`gh release download v11.5.0 -R gchq/CyberChef -p '*.zip' -D /tmp/cc && unzip /tmp/cc/*.zip -d static/vendor/cyberchef && mv static/vendor/cyberchef/CyberChef_*.html static/vendor/cyberchef/index.html`.
 
 Update the theme: `git submodule update --remote themes/wem`, then commit `themes/wem`.
 
