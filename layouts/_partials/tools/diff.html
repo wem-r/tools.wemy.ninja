@@ -1,0 +1,25 @@
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>original</span></div><textarea id="a" class="tall" spellcheck="false">server {
+    listen 80;
+    server_name tools.wemy.ninja;
+    root /srv/www;
+    index index.html;
+}</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>changed</span></div><textarea id="b" class="tall" spellcheck="false">server {
+    listen 443 ssl;
+    server_name tools.wemy.ninja;
+    root /srv/www/tools;
+    index index.html;
+    add_header X-Frame-Options DENY;
+}</textarea></div>
+</div>
+<div class="tk-row"><div class="tk-seg">
+  <label><input type="radio" name="mode" value="lines" checked><span>lines</span></label>
+  <label><input type="radio" name="mode" value="words"><span>words</span></label>
+  <label><input type="radio" name="mode" value="chars"><span>characters</span></label>
+</div><div class="tk-seg">
+  <label><input type="radio" name="view" value="split" checked><span>side by side</span></label>
+  <label><input type="radio" name="view" value="inline"><span>inline</span></label>
+  <label><input type="radio" name="view" value="patch"><span>unified patch</span></label>
+</div><label class="chk"><input type="checkbox" id="ws">ignore whitespace</label><label class="chk"><input type="checkbox" id="ic">ignore case</label><span class="dim" id="sum"></span></div>
+<div id="out" class="tk-diff"></div>

@@ -1,0 +1,8 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><div class="tk-seg"><label><input type="radio" name="fmt" value="png" checked><span>PNG</span></label><label><input type="radio" name="fmt" value="jpeg"><span>JPG</span></label><label><input type="radio" name="fmt" value="webp"><span>WebP</span></label></div>
+    <label>dpi <input type="number" id="dpi" value="150" min="36" max="600"></label><label>quality <input type="number" id="q" value="88" min="30" max="100"></label>
+    <label>pages <input id="pages" class="short" placeholder="all" spellcheck="false"></label><label class="chk"><input type="checkbox" id="transp">transparent background (PNG)</label>
+    <button type="button" class="tk-btn primary" id="save">convert</button></div>
+  <div class="tk-pages" id="pv"></div>
+</div>

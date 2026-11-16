@@ -1,0 +1,16 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <table class="tk-kv" id="info"></table>
+  <div class="tk-sec">edit</div>
+  <div class="tk-grid">
+    <div class="tk-field"><div class="tk-label"><span>Title</span></div><input id="m-title" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>Author</span></div><input id="m-author" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>Subject</span></div><input id="m-subject" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>Keywords (comma)</span></div><input id="m-keywords" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>Creator (app)</span></div><input id="m-creator" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>Producer</span></div><input id="m-producer" spellcheck="false"></div>
+  </div>
+  <div class="tk-row"><label class="chk"><input type="checkbox" id="dates">keep dates</label><label class="chk"><input type="checkbox" id="xmp" checked>remove XMP metadata stream</label>
+    <button type="button" class="tk-btn primary" id="save">save</button><button type="button" class="tk-btn" id="wipe">remove everything</button></div>
+  <div class="tk-sec">XMP</div><pre class="tk-out" id="xmpv" style="max-height:300px;overflow:auto"></pre>
+</div>

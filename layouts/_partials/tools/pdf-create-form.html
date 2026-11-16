@@ -1,0 +1,12 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><span class="dim">drag on the page to add a</span><div class="tk-seg">
+    <label><input type="radio" name="ft" value="text" checked><span>text field</span></label><label><input type="radio" name="ft" value="multiline"><span>text area</span></label>
+    <label><input type="radio" name="ft" value="checkbox"><span>checkbox</span></label><label><input type="radio" name="ft" value="dropdown"><span>dropdown</span></label>
+    <label><input type="radio" name="ft" value="signature"><span>signature box</span></label></div>
+    <input id="opts" value="Yes, No, Maybe" placeholder="dropdown options, comma separated" class="short" spellcheck="false" style="width:16em"></div>
+  <div class="tk-row"><button type="button" class="tk-btn" id="prev">◀</button><span id="pn"></span><button type="button" class="tk-btn" id="next">▶</button>
+    <button type="button" class="tk-btn" id="undo">undo</button><button type="button" class="tk-btn primary" id="save">save form</button></div>
+  <div class="tk-stage" id="stage"><canvas id="cv"></canvas></div>
+  <table class="tk-list" id="list"></table>
+</div>

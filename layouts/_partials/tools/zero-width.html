@@ -1,0 +1,11 @@
+<div class="tk-sec">hide</div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>cover text (what everyone sees)</span></div><textarea id="cover" spellcheck="false">See you at the usual place.</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>secret message</span></div><textarea id="secret" spellcheck="false">friday 21:00, bring the keys</textarea></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span>result — looks identical, carries the secret</span><span class="r dim" id="len"></span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" readonly spellcheck="false"></textarea></div>
+<div class="tk-sec">reveal</div>
+<div class="tk-field"><textarea id="in" spellcheck="false" placeholder="paste text that may hide a message"></textarea></div>
+<div class="tk-msg" id="msg"></div>
+<pre class="tk-out" id="found"></pre>
+<p class="dim">Each bit becomes U+200B (0) or U+200C (1), framed by U+200D. Many chat apps and some editors strip these characters, and the invisible-character detector finds them.</p>

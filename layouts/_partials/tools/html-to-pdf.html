@@ -1,0 +1,27 @@
+<div class="tk-row"><div class="tk-seg"><label><input type="radio" name="src" value="md" checked><span>Markdown</span></label><label><input type="radio" name="src" value="html"><span>HTML</span></label></div>
+  <select id="size"><option>A4</option><option>Letter</option><option>A5</option></select><select id="orient"><option value="portrait">portrait</option><option value="landscape">landscape</option></select>
+  <label>margin (mm) <input type="number" id="margin" value="18" min="0" max="50"></label><select id="font"><option value="sans">sans-serif</option><option value="serif">serif</option><option value="mono">monospace</option></select>
+  <button type="button" class="tk-btn primary" id="print">print / save as PDF</button></div>
+<div class="tk-grid">
+  <div class="tk-field"><textarea id="in" class="tall" spellcheck="false"># Incident report
+
+**Date:** 2026-11-16  ·  **Severity:** medium
+
+## Timeline
+| time  | event |
+|-------|-------|
+| 03:12 | SSH brute force from 203.0.113.7 |
+| 03:13 | CrowdSec ban (4 h) |
+
+## Actions
+1. Rotated keys
+2. Disabled password login
+
+> Nothing was compromised.
+
+```
+sshd -T | grep passwordauthentication
+```</textarea></div>
+  <iframe id="pv" class="tk-preview" title="preview" sandbox="allow-same-origin allow-modals"></iframe>
+</div>
+<p class="dim">The browser's print dialog makes the PDF: choose "Save as PDF" as the printer. Scripts in pasted HTML are removed; images it links to are fetched by your browser.</p>

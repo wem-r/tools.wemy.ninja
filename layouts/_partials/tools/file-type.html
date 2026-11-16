@@ -1,0 +1,3 @@
+{{ partial "tools/_drop.html" (dict "multiple" true "text" "drop one or more files, or click to choose — only the first bytes are read, nothing is uploaded") }}
+<table class="tk-list" id="out" style="margin-top:14px"></table>
+<p class="dim">The type comes from the file's signature ("magic bytes"), not its name. A mismatch with the extension is flagged: a classic trick for malware (invoice.pdf.exe, a script named .jpg).</p>

@@ -1,0 +1,17 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div id="formbox"><div class="tk-sec">form fields</div><div class="tk-grid" id="fields"></div></div>
+  <div class="tk-sec">signature</div>
+  <div class="tk-row"><div class="tk-seg"><label><input type="radio" name="sig" value="draw" checked><span>draw</span></label><label><input type="radio" name="sig" value="type"><span>type</span></label><label><input type="radio" name="sig" value="image"><span>image</span></label></div>
+    <button type="button" class="tk-btn" id="sigclear">clear</button></div>
+  <div data-s="draw"><canvas id="pad" class="tk-sigpad" width="520" height="150"></canvas></div>
+  <div data-s="type" hidden><input id="sigtext" value="" placeholder="your name" spellcheck="false" style="font: 34px 'Segoe Script', 'Brush Script MT', 'Snell Roundhand', cursive"></div>
+  <div data-s="image" hidden><input type="file" id="sigimg" accept="image/png,image/jpeg"></div>
+  <div class="tk-row" style="margin-top:10px"><span class="dim">click on the page to place:</span>
+    <div class="tk-seg"><label><input type="radio" name="put" value="sig" checked><span>signature</span></label><label><input type="radio" name="put" value="date"><span>date</span></label><label><input type="radio" name="put" value="initials"><span>initials</span></label><label><input type="radio" name="put" value="text"><span>text</span></label></div>
+    <input id="initials" value="" placeholder="initials / text" class="short" spellcheck="false"></div>
+  <div class="tk-row"><button type="button" class="tk-btn" id="prev">◀</button><span id="pn"></span><button type="button" class="tk-btn" id="next">▶</button>
+    <label class="chk"><input type="checkbox" id="flat" checked>flatten (fields can't be changed afterwards)</label><button type="button" class="tk-btn primary" id="save">save signed PDF</button></div>
+  <p class="dim">Drag placed items to move them; ✕ removes. This is a visual signature, not a cryptographic (certificate) one.</p>
+  <div class="tk-stage" id="stage"><canvas id="cv"></canvas></div>
+</div>

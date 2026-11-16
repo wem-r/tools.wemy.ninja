@@ -1,0 +1,12 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><div class="tk-seg">
+    <label><input type="radio" name="mode" value="images" checked><span>recompress photos (keeps text)</span></label>
+    <label><input type="radio" name="mode" value="lossless"><span>lossless only</span></label>
+    <label><input type="radio" name="mode" value="raster"><span>re-render pages (scans)</span></label></div></div>
+  <div class="tk-row" data-m="images raster"><label>max dpi <input type="number" id="dpi" value="150" min="50" max="400"></label><label>JPEG quality <input type="number" id="q" value="70" min="20" max="95"></label>
+    <label class="chk" data-m="images"><input type="checkbox" id="gray">greyscale</label></div>
+  <div class="tk-row"><label class="chk"><input type="checkbox" id="strip" checked>remove metadata</label><button type="button" class="tk-btn primary" id="save">compress</button></div>
+  <table class="tk-kv" id="out"></table>
+  <p class="dim">"Recompress photos" re-encodes the JPEG images inside and rebuilds the file structure with qpdf; text and vectors stay as they are. "Re-render" turns each page into one JPEG: smallest for scans, but the text layer is lost.</p>
+</div>

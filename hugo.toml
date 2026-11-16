@@ -27,6 +27,42 @@ defaultContentLanguageInSubdir = false
   [[module.mounts]]
     source = "node_modules/eff-diceware-passphrase"
     target = "assets/vendor/eff"
+  # Big runtime files (workers, WebAssembly, OCR language data), copied as-is to /vendor/…
+  # and loaded only by the tools that need them.
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "node_modules/pdfjs-dist/build"
+    target = "static/vendor/pdfjs"
+    files = ["pdf.worker.min.mjs"]
+  [[module.mounts]]
+    source = "node_modules/pdfjs-dist/cmaps"
+    target = "static/vendor/pdfjs/cmaps"
+  [[module.mounts]]
+    source = "node_modules/pdfjs-dist/standard_fonts"
+    target = "static/vendor/pdfjs/standard_fonts"
+  [[module.mounts]]
+    source = "node_modules/pdfjs-dist/wasm"
+    target = "static/vendor/pdfjs/wasm"
+  [[module.mounts]]
+    source = "node_modules/tesseract.js/dist"
+    target = "static/vendor/tesseract"
+    files = ["worker.min.js"]
+  [[module.mounts]]
+    source = "node_modules/tesseract.js-core"
+    target = "static/vendor/tesseract/core"
+    files = ["*-lstm.wasm.js"]
+  [[module.mounts]]
+    source = "node_modules/@tesseract.js-data/eng/4.0.0_best_int"
+    target = "static/vendor/tesseract/lang"
+  [[module.mounts]]
+    source = "node_modules/@tesseract.js-data/fra/4.0.0_best_int"
+    target = "static/vendor/tesseract/lang"
+  [[module.mounts]]
+    source = "node_modules/@neslinesli93/qpdf-wasm/dist"
+    target = "static/vendor/qpdf"
+    files = ["qpdf.wasm"]
 
 [languages.en]
   label = "English"

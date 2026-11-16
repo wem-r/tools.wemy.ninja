@@ -1,0 +1,15 @@
+<div class="tk-row"><button type="button" class="tk-btn" id="cam">use the camera</button><button type="button" class="tk-btn primary" id="shot" hidden>capture</button><span class="dim">or drop photos of documents</span></div>
+<label class="tk-drop" id="drop"><input type="file" hidden accept="image/*" multiple capture="environment"><span>drop photos, or click to choose / take one — processed on this device</span></label>
+<video id="video" playsinline muted hidden style="max-width:100%;max-height:340px;border-radius:4px;margin-top:10px"></video>
+<div class="tk-msg" id="msg"></div>
+<div id="edit" hidden>
+  <div class="tk-row"><span class="dim">drag the 4 corners onto the page edges</span><button type="button" class="tk-btn" id="auto">auto-detect</button><button type="button" class="tk-btn" id="full">whole image</button>
+    <button type="button" class="tk-btn" id="rot">⟳ rotate</button>
+    <div class="tk-seg"><label><input type="radio" name="flt" value="color"><span>colour</span></label><label><input type="radio" name="flt" value="gray"><span>grey</span></label><label><input type="radio" name="flt" value="bw" checked><span>document (B&amp;W)</span></label></div>
+    <button type="button" class="tk-btn primary" id="add">add page</button></div>
+  <div class="tk-stage" id="stage"><canvas id="cv"></canvas></div>
+</div>
+<div class="tk-sec">pages</div>
+<div class="tk-pages" id="pages"></div>
+<div class="tk-row"><select id="size"><option value="A4">A4</option><option value="Letter">Letter</option><option value="fit">as captured</option></select><label>JPEG quality <input type="number" id="q" value="80" min="30" max="100"></label>
+  <button type="button" class="tk-btn primary" id="save">save PDF</button><span class="dim">then run OCR on it to make the text searchable</span></div>

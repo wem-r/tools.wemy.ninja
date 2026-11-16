@@ -1,0 +1,6 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><label>ignore images smaller than <input type="number" id="min" value="32" min="0"> px</label><button type="button" class="tk-btn primary" id="go">extract</button><button type="button" class="tk-btn" id="zip" disabled>download ZIP</button></div>
+  <div class="tk-pages" id="pv"></div>
+  <p class="dim">JPEG and JPEG 2000 images are saved as they are stored (no quality loss). Other images are decoded and saved as PNG; unusual colour spaces are skipped and counted.</p>
+</div>

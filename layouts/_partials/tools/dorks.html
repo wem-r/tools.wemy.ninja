@@ -1,0 +1,24 @@
+<div class="tk-row"><span class="dim">engine</span><div class="tk-seg">
+  <label><input type="radio" name="eng" value="google" checked><span>Google</span></label>
+  <label><input type="radio" name="eng" value="bing"><span>Bing</span></label>
+  <label><input type="radio" name="eng" value="ddg"><span>DuckDuckGo</span></label></div></div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>keywords</span></div><input id="terms" value="" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>exact phrase</span></div><input id="exact" value="" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>any of (comma separated)</span></div><input id="any" value="" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>site</span></div><input id="site" value="example.com" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>exclude sites (comma)</span></div><input id="notSite" value="www.example.com" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>inurl</span></div><input id="inurl" value="" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>intitle</span></div><input id="intitle" value="" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>intext</span></div><input id="intext" value="" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>file types (comma)</span></div><input id="filetype" value="pdf, xlsx" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>exclude words (comma)</span></div><input id="exclude" value="" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>after (Google)</span></div><input type="date" id="after"></div>
+  <div class="tk-field"><div class="tk-label"><span>before (Google)</span></div><input type="date" id="before"></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span>query</span><span class="r"><button type="button" class="tk-copy" data-copy="#q">copy</button></span></div><pre class="tk-out" id="q"></pre></div>
+<div class="tk-row"><a class="tk-btn primary" id="go" target="_blank" rel="noopener noreferrer">search ↗</a><span class="dim" id="drop2"></span></div>
+<div class="tk-sec">recon presets</div>
+<div class="tk-row"><label>target domain <input id="dom" value="example.com" class="short" spellcheck="false"></label></div>
+<table class="tk-list" id="pre"></table>
+<p class="dim">Only test domains you own or are authorised to assess. The query is built here; it goes to the search engine only when you click a link.</p>

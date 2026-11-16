@@ -1,0 +1,9 @@
+{{ partial "tools/_pdfdrop.html" (dict "multiple" true "accept" "image/*" "text" "drop images (JPG, PNG, WebP, GIF…) — converted in your browser, never uploaded") }}
+<ul class="tk-files" id="files"></ul>
+<div class="tk-row"><span class="dim">page</span><select id="size"><option value="fit">same as image</option><option value="A4" selected>A4</option><option value="Letter">Letter</option><option value="A3">A3</option><option value="A5">A5</option></select>
+  <select id="orient"><option value="auto">auto orientation</option><option value="p">portrait</option><option value="l">landscape</option></select>
+  <label>margin (mm) <input type="number" id="margin" value="10" min="0" max="60"></label>
+  <span class="dim">per page</span><select id="per"><option>1</option><option>2</option><option>4</option><option>6</option></select>
+  <label>JPEG quality <input type="number" id="q" value="90" min="30" max="100"></label>
+  <button type="button" class="tk-btn primary" id="save">make PDF</button></div>
+<p class="dim">JPEG and PNG are embedded as they are; other formats are converted to JPEG first. Photos are turned upright using their EXIF orientation.</p>

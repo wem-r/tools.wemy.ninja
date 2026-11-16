@@ -1,0 +1,10 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><span class="dim">position</span><select id="pos"><option value="bc" selected>bottom centre</option><option value="br">bottom right</option><option value="bl">bottom left</option><option value="tc">top centre</option><option value="tr">top right</option><option value="tl">top left</option><option value="out">bottom outside (book)</option></select>
+    <span class="dim">format</span><select id="fmt"><option value="{n}">1</option><option value="{n} / {total}">1 / 12</option><option value="Page {n} of {total}">Page 1 of 12</option><option value="- {n} -">- 1 -</option><option value="{n:roman}">i, ii, iii</option><option value="custom">custom…</option></select>
+    <input id="custom" value="p. {n}" class="short" hidden spellcheck="false"></div>
+  <div class="tk-row"><label>first number <input type="number" id="start" value="1"></label><label>pages (empty = all) <input id="pages" class="short" spellcheck="false" placeholder="2-"></label>
+    <label>size <input type="number" id="size" value="10" min="5" max="48"></label><label>margin (pt) <input type="number" id="margin" value="28" min="0" max="200"></label><label>colour <input type="color" id="col" value="#222222"></label></div>
+  <div class="tk-row"><button type="button" class="tk-btn" id="preview">preview</button><button type="button" class="tk-btn primary" id="save">add numbers</button></div>
+  <div class="tk-stage"><canvas id="cv"></canvas></div>
+</div>

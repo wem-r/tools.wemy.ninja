@@ -1,0 +1,13 @@
+{{ partial "tools/_drop.html" (dict "text" "drop a file to open it, or click to choose — it stays in your browser") }}
+<div id="ed" hidden>
+  <div class="tk-row" style="margin-top:12px">
+    <button type="button" class="tk-btn" id="prev">◀ page</button><button type="button" class="tk-btn" id="next">page ▶</button>
+    <label>go to 0x<input id="goto" class="short" style="width:9em" spellcheck="false"></label>
+    <input id="find" placeholder="find: hex (4d 5a) or text" spellcheck="false" style="flex:1;min-width:12em"><button type="button" class="tk-btn" id="findnext">find next</button>
+    <button type="button" class="tk-btn primary" id="save">save</button>
+  </div>
+  <div class="tk-msg" id="msg"></div>
+  <div class="tk-hex" id="hex" tabindex="0" data-keys></div>
+  <p class="dim">Click a byte, then type two hex digits to change it (Tab / arrows move). Changed bytes are highlighted. <span id="mods"></span></p>
+  <div class="tk-sec">inspector</div><table class="tk-kv" id="insp"></table>
+</div>

@@ -1,0 +1,9 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><div class="tk-seg">
+    <label><input type="radio" name="mode" value="forms" checked><span>form fields (keeps text selectable)</span></label>
+    <label><input type="radio" name="mode" value="raster"><span>everything, as images</span></label></div>
+    <label data-m="raster" hidden>dpi <input type="number" id="dpi" value="150" min="72" max="400"></label></div>
+  <div class="tk-row"><button type="button" class="tk-btn primary" id="save">flatten</button></div>
+  <p class="dim" id="info"></p>
+</div>

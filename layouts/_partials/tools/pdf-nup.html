@@ -1,0 +1,10 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><span class="dim">pages per sheet</span><div class="tk-seg">
+    <label><input type="radio" name="n" value="2" checked><span>2</span></label><label><input type="radio" name="n" value="4"><span>4</span></label>
+    <label><input type="radio" name="n" value="6"><span>6</span></label><label><input type="radio" name="n" value="8"><span>8</span></label>
+    <label><input type="radio" name="n" value="9"><span>9</span></label><label><input type="radio" name="n" value="16"><span>16</span></label></div>
+    <span class="dim">sheet</span><select id="sheet"><option>A4</option><option>A3</option><option>Letter</option><option>Legal</option></select></div>
+  <div class="tk-row"><label>margin (mm) <input type="number" id="margin" value="8" min="0" max="50"></label><label>gap (mm) <input type="number" id="gap" value="4" min="0" max="50"></label>
+    <label class="chk"><input type="checkbox" id="border" checked>border</label><label class="chk"><input type="checkbox" id="cols">column first</label><button type="button" class="tk-btn primary" id="save">make N-up</button></div>
+</div>

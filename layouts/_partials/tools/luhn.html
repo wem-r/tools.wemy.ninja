@@ -1,0 +1,8 @@
+<div class="tk-field"><div class="tk-label"><span>number (card, IMEI, SIRET… — any Luhn number)</span></div><input id="in" value="4539 1488 0343 6467" spellcheck="false" autocomplete="off"></div>
+<div class="tk-msg" id="msg"></div>
+<table class="tk-kv" id="out"></table>
+<div class="tk-sec">generate test numbers</div>
+<div class="tk-row"><select id="net"><option>Visa</option><option>Mastercard</option><option>American Express</option><option>Discover</option><option>JCB</option><option>Diners Club</option><option>UnionPay</option><option>Maestro</option></select>
+  <label>how many <input type="number" id="n" value="5" min="1" max="100"></label><button type="button" class="tk-btn primary" id="gen">generate</button></div>
+<table class="tk-kv" id="gout"></table>
+<p class="dim">Generated numbers only pass the checksum: they are not real accounts. For payment testing use your provider's official test cards.</p>

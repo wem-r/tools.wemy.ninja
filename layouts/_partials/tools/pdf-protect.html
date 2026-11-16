@@ -1,0 +1,13 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-grid">
+    <div class="tk-field"><div class="tk-label"><span>password to open</span><span class="r"><label class="chk"><input type="checkbox" id="show">show</label></span></div><input type="password" id="user" autocomplete="new-password"></div>
+    <div class="tk-field"><div class="tk-label"><span>owner password (changes permissions) — empty = same</span></div><input type="password" id="owner" autocomplete="new-password"></div>
+  </div>
+  <div class="tk-row"><span class="dim">allow</span>
+    <label class="chk"><input type="checkbox" id="p-print" checked>printing</label><label class="chk"><input type="checkbox" id="p-modify" checked>editing</label>
+    <label class="chk"><input type="checkbox" id="p-extract" checked>copying text</label><label class="chk"><input type="checkbox" id="p-annotate" checked>comments</label>
+    <label class="chk"><input type="checkbox" id="p-form" checked>filling forms</label><label class="chk"><input type="checkbox" id="p-assemble" checked>page assembly</label></div>
+  <div class="tk-row"><button type="button" class="tk-btn primary" id="save">protect (AES-256)</button></div>
+  <p class="dim">Permissions are honoured by well-behaved readers only; the open password is what really protects the content. A strong one: use the password generator.</p>
+</div>

@@ -1,0 +1,2 @@
+{{- /* Drop zone. Params: id, accept, multiple, text */ -}}
+<label class="tk-drop" id="{{ .id | default "drop" }}"><input type="file" hidden{{ with .accept }} accept="{{ . }}"{{ end }}{{ if .multiple }} multiple{{ end }}><span>{{ .text | default "drop a file here, or click to choose — it is read locally, never uploaded" }}</span></label>

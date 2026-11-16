@@ -1,0 +1,26 @@
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>input</span><span class="r dim" id="ci"></span></div><textarea id="in" class="tall" spellcheck="false">banana
+Apple
+  cherry
+banana
+
+élan
+item 10
+item 9</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>output</span><span class="r dim" id="co"></span><span class="r"><button type="button" class="tk-btn" id="use">← use as input</button><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" class="tall" readonly spellcheck="false"></textarea></div>
+</div>
+<div class="tk-row"><span class="dim">lines</span>
+  <button type="button" class="tk-btn" data-op="sort">sort A→Z</button><button type="button" class="tk-btn" data-op="sortDesc">Z→A</button><button type="button" class="tk-btn" data-op="sortLen">by length</button>
+  <button type="button" class="tk-btn" data-op="reverse">reverse</button><button type="button" class="tk-btn" data-op="shuffle">shuffle</button>
+  <button type="button" class="tk-btn" data-op="dedupe">remove duplicates</button><button type="button" class="tk-btn" data-op="dedupeI">… ignoring case</button>
+  <button type="button" class="tk-btn" data-op="removeEmpty">remove empty</button><button type="button" class="tk-btn" data-op="trim">trim</button>
+  <button type="button" class="tk-btn" data-op="number">number</button><button type="button" class="tk-btn" data-op="unnumber">un-number</button></div>
+<div class="tk-row"><span class="dim">text</span>
+  <button type="button" class="tk-btn" data-op="spaces">normalise whitespace</button><button type="button" class="tk-btn" data-op="accents">remove accents</button>
+  <button type="button" class="tk-btn" data-op="join">join lines with</button><input id="joiner" value=", " class="short" style="width:5em">
+  <button type="button" class="tk-btn" data-op="split">split on</button><input id="splitter" value="," class="short" style="width:5em"></div>
+<div class="tk-row"><span class="dim">shape</span>
+  <button type="button" class="tk-btn" data-op="wrap">wrap at</button><input type="number" id="width" value="40" min="5" max="500">
+  <button type="button" class="tk-btn" data-op="truncate">truncate each line to</button><input type="number" id="tlen" value="20" min="1">
+  <button type="button" class="tk-btn" data-op="repeat">repeat ×</button><input type="number" id="times" value="3" min="1" max="10000">
+  <button type="button" class="tk-btn" data-op="prefix">add prefix / suffix</button><input id="pre" value="- " class="short" style="width:5em"><input id="suf" value="" class="short" style="width:5em"></div>

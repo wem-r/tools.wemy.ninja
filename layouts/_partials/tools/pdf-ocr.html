@@ -1,0 +1,9 @@
+{{ partial "tools/_pdfdrop.html" (dict "accept" ".pdf,application/pdf,image/*" "text" "drop a scanned PDF or images — recognised in your browser, never uploaded" "multiple" true) }}
+<div id="ui" hidden>
+  <div class="tk-row"><span class="dim">language</span><div class="tk-seg"><label><input type="radio" name="lang" value="eng" checked><span>English</span></label><label><input type="radio" name="lang" value="fra"><span>French</span></label><label><input type="radio" name="lang" value="eng+fra"><span>both</span></label></div>
+    <label>dpi <input type="number" id="dpi" value="300" min="150" max="400"></label><label>pages <input id="pages" class="short" placeholder="all" spellcheck="false"></label>
+    <button type="button" class="tk-btn primary" id="go">run OCR</button><button type="button" class="tk-btn" id="stop" hidden>stop</button></div>
+  <p class="dim">First use downloads the OCR engine and language data from this site (about 7 MB, then cached by the browser). Count a few seconds per page.</p>
+  <div class="tk-row"><button type="button" class="tk-btn" id="dlpdf" disabled>download searchable PDF</button><button type="button" class="tk-btn" id="dltxt" disabled>download text</button></div>
+  <textarea id="out" class="tall" readonly spellcheck="false" placeholder="recognised text appears here"></textarea>
+</div>

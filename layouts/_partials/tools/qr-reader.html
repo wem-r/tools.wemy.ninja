@@ -1,0 +1,8 @@
+<div class="tk-row"><button type="button" class="tk-btn" id="cam">use the camera</button><span class="dim">or paste an image (Ctrl+V)</span></div>
+{{ partial "tools/_drop.html" (dict "accept" "image/*" "text" "drop an image with a QR code — decoded here, nothing is uploaded") }}
+<video id="video" playsinline muted hidden style="max-width:100%;max-height:320px;border-radius:4px;margin-top:10px"></video>
+<div class="tk-msg" id="msg"></div>
+<div id="res" hidden>
+  <div class="tk-field"><div class="tk-label"><span>content (shown as text, never opened)</span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><pre class="tk-out" id="out"></pre></div>
+  <table class="tk-kv" id="kv"></table>
+</div>

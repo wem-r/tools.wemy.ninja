@@ -1,0 +1,6 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><label>dpi <input type="number" id="dpi" value="150" min="72" max="400"></label><label>JPEG quality <input type="range" id="q" min="40" max="100" value="80"></label><span class="dim" id="qv"></span>
+    <label class="chk"><input type="checkbox" id="bw">pure black &amp; white</label><button type="button" class="tk-btn primary" id="save">convert</button></div>
+  <p class="dim">Pages are re-rendered as grey images: text is no longer selectable (run OCR after if needed).</p>
+</div>

@@ -1,0 +1,12 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><div class="tk-seg">
+    <label><input type="radio" name="mode" value="ranges" checked><span>by ranges</span></label>
+    <label><input type="radio" name="mode" value="every"><span>every N pages</span></label>
+    <label><input type="radio" name="mode" value="each"><span>one file per page</span></label>
+    <label><input type="radio" name="mode" value="extract"><span>extract pages to one file</span></label></div></div>
+  <div class="tk-field" data-m="ranges"><div class="tk-label"><span>ranges, one file each — separated by ; (e.g. 1-3; 4-10; 11-)</span></div><input id="ranges" value="1-2; 3-" spellcheck="false"></div>
+  <div class="tk-row" data-m="every" hidden><label>pages per file <input type="number" id="n" value="2" min="1"></label></div>
+  <div class="tk-field" data-m="extract" hidden><div class="tk-label"><span>pages to keep (e.g. 1, 3-5, odd, even, last)</span></div><input id="pick" value="1, 3-" spellcheck="false"></div>
+  <div class="tk-row"><button type="button" class="tk-btn primary" id="save">split</button><span class="dim" id="plan"></span></div>
+</div>

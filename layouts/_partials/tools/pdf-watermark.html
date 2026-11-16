@@ -1,0 +1,15 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><div class="tk-seg"><label><input type="radio" name="kind" value="text" checked><span>text</span></label><label><input type="radio" name="kind" value="image"><span>image</span></label></div>
+    <div class="tk-seg"><label><input type="radio" name="lay" value="center" checked><span>centre</span></label><label><input type="radio" name="lay" value="tile"><span>tiled</span></label><label><input type="radio" name="lay" value="br"><span>bottom right</span></label></div></div>
+  <div class="tk-grid">
+    <div class="tk-field" data-k="text"><div class="tk-label"><span>text</span></div><input id="text" value="CONFIDENTIAL" spellcheck="false"></div>
+    <div class="tk-field" data-k="image" hidden><div class="tk-label"><span>image (PNG / JPEG)</span></div><input type="file" id="img" accept="image/png,image/jpeg"></div>
+    <div class="tk-field"><div class="tk-label"><span>pages (empty = all)</span></div><input id="pages" spellcheck="false" placeholder="1-3, 5, odd…"></div>
+  </div>
+  <div class="tk-row"><label>size <input type="number" id="size" value="60" min="4" max="400"></label><label>opacity <input type="range" id="op" min="5" max="100" value="20"></label>
+    <label>angle <input type="number" id="ang" value="45" min="-180" max="180"></label><label data-k="text">colour <input type="color" id="col" value="#c0392b"></label>
+    <label class="chk"><input type="checkbox" id="under">behind content (best effort)</label></div>
+  <div class="tk-row"><button type="button" class="tk-btn" id="preview">preview page 1</button><button type="button" class="tk-btn primary" id="save">add watermark</button></div>
+  <div class="tk-stage"><canvas id="cv"></canvas></div>
+</div>

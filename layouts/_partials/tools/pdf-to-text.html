@@ -1,0 +1,7 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><label>pages <input id="pages" class="short" placeholder="all" spellcheck="false"></label><label class="chk"><input type="checkbox" id="sep" checked>page separators</label>
+    <label class="chk"><input type="checkbox" id="layout">keep layout (spaces)</label><button type="button" class="tk-btn primary" id="go">extract</button><button type="button" class="tk-btn" id="dl">download .txt</button></div>
+  <div class="tk-field"><div class="tk-label"><span>text</span><span class="r dim" id="cnt"></span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" class="tall" readonly spellcheck="false"></textarea></div>
+  <p class="dim">Only the PDF's text layer is read. A scanned document has none: use the OCR tool for those.</p>
+</div>

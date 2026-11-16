@@ -1,0 +1,13 @@
+{{ partial "tools/_drop.html" (dict "accept" ".log,.txt,.csv,.xml,.json,.jsonl,.gz" "text" "drop a log file (or several of the same kind), or paste below — read locally, never uploaded" "multiple" true) }}
+<div class="tk-field" style="margin-top:10px"><div class="tk-label"><span>or paste</span><span class="r"><button type="button" class="tk-btn" id="sample">sample</button></span></div><textarea id="in" spellcheck="false" placeholder="nginx / Apache access or error log, auth.log, syslog, journalctl, Windows events exported as XML or CSV, JSON lines, CSV…"></textarea></div>
+<div class="tk-row"><span class="dim">format</span><select id="fmt"><option value="auto">auto-detect</option><option value="access">web access log</option><option value="nginx-error">nginx error</option><option value="apache-error">Apache error</option><option value="syslog">syslog / auth.log / journalctl</option><option value="windows-xml">Windows XML</option><option value="windows-csv">Windows CSV</option><option value="json">JSON lines</option><option value="csv">CSV / TSV</option><option value="raw">plain lines</option></select>
+  <label>syslog year <input type="number" id="year" min="1990" max="2100"></label></div>
+<div class="tk-msg" id="msg"></div>
+<div id="res" hidden>
+  <div class="tk-grid" id="stats"></div>
+  <div class="tk-row"><input id="q" placeholder="filter: text, or key:value (ip:203.0.113.7, status:404, -event:disconnect)" spellcheck="false" autocomplete="off" style="flex:1">
+    <div class="tk-seg"><label><input type="radio" name="lvl" value="" checked><span>all</span></label><label><input type="radio" name="lvl" value="warn"><span>warn+</span></label><label><input type="radio" name="lvl" value="bad"><span>bad</span></label></div>
+    <button type="button" class="tk-btn" id="csv">export CSV</button></div>
+  <div class="tk-msg" id="cnt"></div>
+  <div class="tk-scroll"><table class="tk-list tk-log" id="tbl"></table></div>
+</div>

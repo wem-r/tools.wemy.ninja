@@ -1,0 +1,7 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><span class="dim">all pages</span><button type="button" class="tk-btn" id="rl">⟲ rotate left</button><button type="button" class="tk-btn" id="rr">⟳ rotate right</button><button type="button" class="tk-btn" id="rev">reverse order</button><button type="button" class="tk-btn" id="reset">reset</button>
+    <button type="button" class="tk-btn primary" id="save">save PDF</button></div>
+  <p class="dim">Drag pages to reorder. Per page: ⟲ ⟳ rotate, ⧉ duplicate, ✕ delete (click again to restore).</p>
+  <div class="tk-pages" id="pages"></div>
+</div>

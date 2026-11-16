@@ -1,0 +1,13 @@
+<div class="tk-row">
+  <button type="button" class="tk-btn" id="open">open…</button><input type="file" id="file" hidden accept="text/*,.md,.txt,.csv,.log,.json,.xml,.yml,.yaml,.ini,.conf,.sh,.py,.js,.html,.css">
+  <button type="button" class="tk-btn primary" id="save">save as…</button><input id="name" value="notes.txt" class="short" spellcheck="false">
+  <label class="chk"><input type="checkbox" id="wrap" checked>wrap</label>
+  <label class="chk"><input type="checkbox" id="mono" checked>monospace</label>
+  <button type="button" class="tk-btn" id="clear">new</button>
+  <span class="dim" id="st"></span>
+</div>
+<div class="tk-row"><input id="find" placeholder="find" spellcheck="false" style="flex:1;min-width:10em"><input id="rep" placeholder="replace with" spellcheck="false" style="flex:1;min-width:10em">
+  <label class="chk"><input type="checkbox" id="re">regex</label><label class="chk"><input type="checkbox" id="cs">match case</label>
+  <button type="button" class="tk-btn" id="fn">next</button><button type="button" class="tk-btn" id="ra">replace all</button><span class="dim" id="fc"></span></div>
+<textarea id="ed" class="tk-editor" spellcheck="false"></textarea>
+<p class="dim">The draft is kept in this browser (localStorage) so a reload doesn't lose it. "new" clears it.</p>

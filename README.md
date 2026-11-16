@@ -14,6 +14,7 @@ A Hugo site on the [wem theme](https://github.com/wem-r/hugo-theme-wem), deploye
 | `assets/js/tk.js` | small DOM / bytes helpers used by every tool |
 | `assets/css/site.css` | form controls and outputs (theme colour tokens) |
 | `layouts/_partials/data/*.html` | data files built from npm packages (MAC vendors, IANA ports, EFF wordlist) |
+| `/vendor/…` (module mounts in `hugo.toml`) | big runtime files copied from npm: pdf.js worker / fonts / wasm, qpdf.wasm, Tesseract core + English & French data |
 | `layouts/_partials/hooks/note-end.html` | renders the tool form + script under the page text |
 | `themes/wem` | git submodule: `wem-r/hugo-theme-wem` |
 
@@ -30,7 +31,7 @@ A Hugo site on the [wem theme](https://github.com/wem-r/hugo-theme-wem), deploye
 git clone --recurse-submodules https://github.com/wem-r/tools.wemy.ninja.git
 cd tools.wemy.ninja
 npm ci          # Hugo extended (pinned) + the tools' libraries
-npm test        # unit tests of assets/tools/lib
+npm test        # unit tests of assets/tools/lib (Node ≥ 22)
 npm run serve   # http://localhost:1313/
 ```
 
@@ -42,13 +43,27 @@ Update the theme: `git submodule update --remote themes/wem`, then commit `theme
 
 ## Third-party code and data
 
-| | Licence |
-|---|---|
-| [CyberChef](https://github.com/gchq/CyberChef) (downloaded at build time, unmodified) | Apache-2.0 |
-| [hash-wasm](https://github.com/Daninet/hash-wasm) | MIT |
-| [jose](https://github.com/panva/jose) | MIT |
-| [cronstrue](https://github.com/bradymholt/cRonstrue) | MIT |
-| [ipaddr.js](https://github.com/whitequark/ipaddr.js) | MIT |
-| [oui-data](https://github.com/silverwind/oui-data) (IEEE registry) | BSD-2-Clause |
-| [port-numbers](https://github.com/silverwind/port-numbers) (IANA registry) | BSD-2-Clause |
-| [EFF large wordlist](https://www.eff.org/dice) via eff-diceware-passphrase | CC BY 3.0 US (list), ISC (package) |
+All run in the browser; none is modified.
+
+| | Used by | Licence |
+|---|---|---|
+| [CyberChef](https://github.com/gchq/CyberChef) (downloaded at build time) | CyberChef | Apache-2.0 |
+| [pdf.js](https://github.com/mozilla/pdf.js) (`pdfjs-dist`, with its wasm decoders) | PDF tools | Apache-2.0 (decoders: see `vendor/pdfjs/wasm/LICENSE_*`) |
+| [pdf-lib](https://github.com/Hopding/pdf-lib) | PDF tools | MIT |
+| [qpdf](https://github.com/qpdf/qpdf) via [@neslinesli93/qpdf-wasm](https://github.com/neslinesli93/qpdf-wasm) | protect, unlock, repair, compress | Apache-2.0 / ISC |
+| [Tesseract.js](https://github.com/naptha/tesseract.js) + core + `@tesseract.js-data/eng`, `fra` | OCR | Apache-2.0 (data: Apache-2.0, packages MIT) |
+| [fflate](https://github.com/101arrowz/fflate) | ZIP downloads, PDF image decoding | MIT |
+| [hash-wasm](https://github.com/Daninet/hash-wasm) | hashes, HMAC | MIT |
+| [jose](https://github.com/panva/jose) | JWT | MIT |
+| [js-cvss](https://github.com/pandatix/js-cvss) | CVSS | MIT |
+| [jsdiff](https://github.com/kpdecker/jsdiff) | compare text | BSD-3-Clause |
+| [exifr](https://github.com/MikeKovarik/exifr), [piexifjs](https://github.com/hMatoba/piexifjs) | EXIF | MIT |
+| [jsQR](https://github.com/cozmo/jsQR) | QR reader | Apache-2.0 |
+| [marked](https://github.com/markedjs/marked), [DOMPurify](https://github.com/cure53/DOMPurify) | HTML → PDF | MIT, Apache-2.0 / MPL-2.0 |
+| [cronstrue](https://github.com/bradymholt/cRonstrue) | cron | MIT |
+| [ipaddr.js](https://github.com/whitequark/ipaddr.js) | IPv6 | MIT |
+| [oui-data](https://github.com/silverwind/oui-data) (IEEE registry) | MAC vendors | BSD-2-Clause |
+| [port-numbers](https://github.com/silverwind/port-numbers) (IANA registry) | ports | BSD-2-Clause |
+| [EFF large wordlist](https://www.eff.org/dice) via eff-diceware-passphrase | passphrases | CC BY 3.0 US (list), ISC (package) |
+
+AGPL engines (MuPDF, Ghostscript) are deliberately not used.

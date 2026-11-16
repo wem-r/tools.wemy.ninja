@@ -1,0 +1,6 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><button type="button" class="tk-btn" id="detect">detect tilt</button><label>ignore under (°) <input type="number" id="min" value="0.2" step="0.1" min="0" max="5"></label><button type="button" class="tk-btn primary" id="save">straighten &amp; save</button></div>
+  <p class="dim">Angles are estimated from the text lines; correct any of them before saving. Pages keep their text layer (they are rotated, not re-rendered).</p>
+  <table class="tk-list" id="list"></table>
+</div>

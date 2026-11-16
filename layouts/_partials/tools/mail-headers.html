@@ -1,0 +1,11 @@
+<div class="tk-field"><div class="tk-label"><span>raw headers — in Gmail "Show original", Outlook "View message source", Thunderbird Ctrl+U</span><span class="r"><button type="button" class="tk-btn" id="sample">sample</button></span></div>
+  <textarea id="in" class="tall" spellcheck="false" placeholder="paste the headers (or the whole .eml) here"></textarea></div>
+{{ partial "tools/_drop.html" (dict "accept" ".eml,.msg,.txt" "text" "or drop an .eml file") }}
+<div class="tk-msg" id="msg"></div>
+<div id="res" hidden>
+  <div class="tk-sec">summary</div><table class="tk-kv" id="sum"></table>
+  <div class="tk-sec">checks</div><div id="find"></div>
+  <div class="tk-sec">authentication</div><table class="tk-list" id="auth"></table>
+  <div class="tk-sec">delivery path (oldest first)</div><table class="tk-list" id="hops"></table>
+  <div class="tk-sec">all headers</div><div class="tk-field"><input id="hf" placeholder="filter headers" spellcheck="false" autocomplete="off"></div><table class="tk-kv" id="all"></table>
+</div>

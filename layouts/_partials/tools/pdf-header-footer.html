@@ -1,0 +1,16 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <p class="dim">Tokens: <code>{n}</code> page, <code>{total}</code>, <code>{date}</code>, <code>{file}</code>, <code>{n:roman}</code>.</p>
+  <div class="tk-grid">
+    <div class="tk-field"><div class="tk-label"><span>header left</span></div><input id="hl" value="{file}" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>header centre</span></div><input id="hc" value="" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>header right</span></div><input id="hr" value="{date}" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>footer left</span></div><input id="fl" value="Confidential" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>footer centre</span></div><input id="fc" value="" spellcheck="false"></div>
+    <div class="tk-field"><div class="tk-label"><span>footer right</span></div><input id="fr" value="{n} / {total}" spellcheck="false"></div>
+  </div>
+  <div class="tk-row"><label>pages (empty = all) <input id="pages" class="short" spellcheck="false"></label><label>size <input type="number" id="size" value="9" min="5" max="36"></label>
+    <label>margin (pt) <input type="number" id="margin" value="24" min="0" max="200"></label><label>colour <input type="color" id="col" value="#444444"></label><label class="chk"><input type="checkbox" id="line">rule line</label></div>
+  <div class="tk-row"><button type="button" class="tk-btn" id="preview">preview</button><button type="button" class="tk-btn primary" id="save">apply</button></div>
+  <div class="tk-stage"><canvas id="cv"></canvas></div>
+</div>

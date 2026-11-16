@@ -1,0 +1,8 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><span class="dim">new size</span><select id="size"><option>A4</option><option>A3</option><option>A5</option><option>Letter</option><option>Legal</option><option value="custom">custom (mm)</option></select>
+    <input type="number" id="cw" value="210" class="short" style="width:6em" hidden><input type="number" id="ch" value="297" class="short" style="width:6em" hidden>
+    <select id="orient"><option value="auto">keep each page's orientation</option><option value="p">portrait</option><option value="l">landscape</option></select>
+    <div class="tk-seg"><label><input type="radio" name="fit" value="fit" checked><span>fit</span></label><label><input type="radio" name="fit" value="fill"><span>fill (crop)</span></label><label><input type="radio" name="fit" value="none"><span>no scaling</span></label></div></div>
+  <div class="tk-row"><label>pages <input id="pages" class="short" placeholder="all" spellcheck="false"></label><button type="button" class="tk-btn primary" id="save">resize</button><span class="dim" id="sizes"></span></div>
+</div>

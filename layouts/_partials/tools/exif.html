@@ -1,0 +1,19 @@
+{{ partial "tools/_drop.html" (dict "accept" "image/*,.heic,.heif,.dng,.cr2,.nef,.arw,.tif,.tiff" "text" "drop a photo (JPEG, PNG, WebP, HEIC, TIFF / RAW) — read locally, never uploaded") }}
+<div class="tk-msg" id="msg"></div>
+<div id="res" hidden>
+  <div class="tk-grid" style="margin-top:12px"><div><img id="prev" alt="" style="max-width:100%;max-height:260px;border-radius:4px"></div><table class="tk-kv" id="key"></table></div>
+  <div class="tk-sec">remove metadata</div>
+  <div class="tk-row"><label class="chk"><input type="checkbox" id="icc" checked>keep the colour profile (ICC)</label><button type="button" class="tk-btn primary" id="strip">download cleaned copy</button><span class="dim" id="stripinfo"></span></div>
+  <div id="editbox"><div class="tk-sec">edit (JPEG)</div>
+    <div class="tk-grid">
+      <div class="tk-field"><div class="tk-label"><span>Artist</span></div><input data-tag="Artist" spellcheck="false"></div>
+      <div class="tk-field"><div class="tk-label"><span>Copyright</span></div><input data-tag="Copyright" spellcheck="false"></div>
+      <div class="tk-field"><div class="tk-label"><span>Description</span></div><input data-tag="ImageDescription" spellcheck="false"></div>
+      <div class="tk-field"><div class="tk-label"><span>Date taken (YYYY:MM:DD HH:MM:SS)</span></div><input data-tag="DateTimeOriginal" spellcheck="false"></div>
+      <div class="tk-field"><div class="tk-label"><span>Camera make</span></div><input data-tag="Make" spellcheck="false"></div>
+      <div class="tk-field"><div class="tk-label"><span>Camera model</span></div><input data-tag="Model" spellcheck="false"></div>
+    </div>
+    <div class="tk-row"><label class="chk"><input type="checkbox" id="nogps" checked>remove GPS</label><button type="button" class="tk-btn primary" id="save">download edited copy</button></div>
+  </div>
+  <div class="tk-sec">all tags</div><div class="tk-field"><input id="f" placeholder="filter tags" spellcheck="false" autocomplete="off"></div><div id="all"></div>
+</div>

@@ -1,0 +1,5 @@
+{{ partial "tools/_pdfdrop.html" (dict "multiple" true "text" "drop PDFs here (several at once, and more later) — merged in your browser, never uploaded") }}
+<ul class="tk-files" id="files"></ul>
+<div class="tk-row"><button type="button" class="tk-btn" id="sort">sort by name</button><button type="button" class="tk-btn" id="clear">clear</button>
+  <label class="chk"><input type="checkbox" id="bm" checked>a bookmark per file</label><button type="button" class="tk-btn primary" id="save">combine</button></div>
+<p class="dim">Per file, "pages" accepts e.g. <code>1-3, 5, 8-</code> (empty = all). Use ↑ ↓ to change the order.</p>

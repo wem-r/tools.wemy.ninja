@@ -1,0 +1,10 @@
+{{ partial "tools/_pdfdrop.html" (dict) }}
+<div id="ui" hidden>
+  <div class="tk-row"><button type="button" class="tk-btn" id="prev">◀</button><span id="pn"></span><button type="button" class="tk-btn" id="next">▶</button>
+    <button type="button" class="tk-btn" id="undo">undo box</button><button type="button" class="tk-btn" id="clearp">clear page</button>
+    <label>dpi <input type="number" id="dpi" value="200" min="100" max="400"></label>
+    <label class="chk"><input type="checkbox" id="meta" checked>also remove metadata</label>
+    <button type="button" class="tk-btn primary" id="save">redact &amp; save</button></div>
+  <p class="dim">Drag to draw black boxes. Pages with boxes are turned into images (their text is really gone, not hidden); other pages are copied untouched (links inside the document are removed so nothing points back to the old pages). <span id="cnt"></span></p>
+  <div class="tk-stage" id="stage"><canvas id="cv"></canvas></div>
+</div>
