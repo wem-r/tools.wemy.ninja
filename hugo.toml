@@ -27,6 +27,9 @@ defaultContentLanguageInSubdir = false
   [[module.mounts]]
     source = "node_modules/eff-diceware-passphrase"
     target = "assets/vendor/eff"
+  [[module.mounts]]
+    source = "node_modules/unicode-emoji-json"
+    target = "assets/vendor/emoji"
   # Big runtime files (workers, WebAssembly, OCR language data), copied as-is to /vendor/…
   # and loaded only by the tools that need them.
   [[module.mounts]]

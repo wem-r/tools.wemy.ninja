@@ -1,0 +1,11 @@
+<table class="tk-list tk-chmod"><tr><th></th><th>read</th><th>write</th><th>execute</th></tr>
+  <tr><td>owner</td><td><input type="checkbox" data-b="256" checked></td><td><input type="checkbox" data-b="128" checked></td><td><input type="checkbox" data-b="64" checked></td></tr>
+  <tr><td>group</td><td><input type="checkbox" data-b="32" checked></td><td><input type="checkbox" data-b="16"></td><td><input type="checkbox" data-b="8" checked></td></tr>
+  <tr><td>others</td><td><input type="checkbox" data-b="4" checked></td><td><input type="checkbox" data-b="2"></td><td><input type="checkbox" data-b="1" checked></td></tr>
+  <tr><td>special</td><td><label class="chk"><input type="checkbox" data-b="2048">setuid</label></td><td><label class="chk"><input type="checkbox" data-b="1024">setgid</label></td><td><label class="chk"><input type="checkbox" data-b="512">sticky</label></td></tr></table>
+<div class="tk-grid" style="margin-top:12px">
+  <div class="tk-field"><div class="tk-label"><span>octal</span></div><input id="oct" value="755" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>symbolic (ls -l)</span></div><input id="sym" value="rwxr-xr-x" spellcheck="false" autocomplete="off"></div>
+</div>
+<div class="tk-msg" id="msg"></div>
+<table class="tk-kv" id="out"></table>

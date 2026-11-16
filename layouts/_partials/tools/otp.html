@@ -1,0 +1,11 @@
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>secret (Base32)</span><span class="r"><button type="button" class="tk-btn" id="newsec">new secret</button></span></div><input id="sec" value="JBSWY3DPEHPK3PXP" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>account / issuer</span></div><div class="tk-row" style="margin:0;flex-wrap:nowrap"><input id="acct" value="wem@wemy.ninja" spellcheck="false"><input id="iss" value="tools.wemy.ninja" spellcheck="false"></div></div>
+</div>
+<div class="tk-row"><div class="tk-seg"><label><input type="radio" name="kind" value="totp" checked><span>TOTP (time)</span></label><label><input type="radio" name="kind" value="hotp"><span>HOTP (counter)</span></label></div>
+  <select id="alg"><option>SHA1</option><option>SHA256</option><option>SHA512</option></select><select id="digits"><option>6</option><option>8</option></select>
+  <label data-k="totp">period <input type="number" id="period" value="30" min="10" max="300"></label><label data-k="hotp" hidden>counter <input type="number" id="counter" value="0" min="0"></label></div>
+<div class="tk-msg" id="msg"></div>
+<div class="tk-otp"><div><span class="dim">previous</span><b id="prev"></b></div><div class="now"><span class="dim">now</span><b id="now"></b><div class="tk-meter"><i id="bar"></i></div></div><div><span class="dim">next</span><b id="next"></b></div></div>
+<div class="tk-grid"><div class="tk-field"><div class="tk-label"><span>otpauth:// link</span><span class="r"><button type="button" class="tk-copy" data-copy="#uri">copy</button></span></div><textarea id="uri" readonly spellcheck="false"></textarea></div><div><img id="qr" alt="QR code for authenticator apps" style="background:#fff;border-radius:4px;padding:6px"></div></div>
+<p class="dim">Testing a 2FA set-up? Use a throwaway secret: anyone who sees a real secret can generate your codes.</p>

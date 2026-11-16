@@ -1,0 +1,10 @@
+<div class="tk-row"><span class="dim">algorithm</span><div class="tk-seg">
+  <label><input type="radio" name="alg" value="AES" checked><span>AES-256</span></label><label><input type="radio" name="alg" value="TripleDES"><span>TripleDES</span></label>
+  <label><input type="radio" name="alg" value="Rabbit"><span>Rabbit</span></label><label><input type="radio" name="alg" value="RC4"><span>RC4</span></label></div></div>
+<div class="tk-field"><div class="tk-label"><span>passphrase</span></div><input id="pw" value="correct horse battery staple" spellcheck="false" autocomplete="off"></div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>plain text</span></div><textarea id="plain" class="tall" spellcheck="false">Meet me at the usual place at 21:00.</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>encrypted (Base64)</span><span class="r"><button type="button" class="tk-copy" data-copy="#enc">copy</button></span></div><textarea id="enc" class="tall" spellcheck="false"></textarea></div>
+</div>
+<div class="tk-msg" id="msg"></div>
+<p class="dim">Type on the left to encrypt, paste on the right to decrypt. Compatible with <code>openssl enc -aes-256-cbc -md md5 -a</code> (the key comes from the passphrase with EVP_BytesToKey, MD5 — weak by today's standards: use a long passphrase). RC4 and TripleDES are legacy.</p>

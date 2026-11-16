@@ -13,9 +13,10 @@ A Hugo site on the [wem theme](https://github.com/wem-r/hugo-theme-wem), deploye
 | `assets/tools/lib/*.js` | pure logic shared by tools, unit-tested in `tests/` |
 | `assets/js/tk.js` | small DOM / bytes helpers used by every tool |
 | `assets/css/site.css` | form controls and outputs (theme colour tokens) |
-| `layouts/_partials/data/*.html` | data files built from npm packages (MAC vendors, IANA ports, EFF wordlist) |
+| `layouts/_partials/data/*.html` | data files built from npm packages (MAC vendors, IANA ports, EFF wordlist, emoji list) |
 | `/vendor/…` (module mounts in `hugo.toml`) | big runtime files copied from npm: pdf.js worker / fonts / wasm, qpdf.wasm, Tesseract core + English & French data |
 | `layouts/_partials/hooks/note-end.html` | renders the tool form + script under the page text |
+| `assets/tools/lib/ciphers/` + `scripts/gen-ciphers.mjs` | the Cipher Suite: one registry (classical / encodings / other), one generic page `tool: cipher` + `cipher: <id>`; `node scripts/gen-ciphers.mjs` rewrites `content/en/ciphers/` |
 | `themes/wem` | git submodule: `wem-r/hugo-theme-wem` |
 
 ## Add a tool
@@ -65,5 +66,15 @@ All run in the browser; none is modified.
 | [oui-data](https://github.com/silverwind/oui-data) (IEEE registry) | MAC vendors | BSD-2-Clause |
 | [port-numbers](https://github.com/silverwind/port-numbers) (IANA registry) | ports | BSD-2-Clause |
 | [EFF large wordlist](https://www.eff.org/dice) via eff-diceware-passphrase | passphrases | CC BY 3.0 US (list), ISC (package) |
+| [crypto-js](https://github.com/brix/crypto-js) | encrypt text | MIT |
+| [bcrypt.js](https://github.com/dcodeIO/bcrypt.js) | bcrypt | BSD-3-Clause |
+| [@scure/bip39](https://github.com/paulmillr/scure-bip39) | BIP39 | MIT |
+| [UAParser.js](https://github.com/faisalman/ua-parser-js) 1.x (v2 is AGPL, not used) | user-agent | MIT |
+| [node-qrcode](https://github.com/soldair/node-qrcode) | QR code, Wi-Fi QR, OTP | MIT |
+| [js-yaml](https://github.com/nodeca/js-yaml), [smol-toml](https://github.com/squirrelchat/smol-toml) | YAML ↔ JSON ↔ TOML, docker-compose | MIT, BSD-3-Clause |
+| [sql-formatter](https://github.com/sql-formatter-org/sql-formatter) | SQL | MIT |
+| [libphonenumber-js](https://github.com/catamphetamine/libphonenumber-js) | phone numbers | MIT |
+| [figlet.js](https://github.com/patorjk/figlet.js) + its FIGlet fonts | ASCII art | MIT (fonts: see each font's header) |
+| [unicode-emoji-json](https://github.com/muan/unicode-emoji-json) (Unicode data) | emoji | MIT (data: Unicode licence) |
 
 AGPL engines (MuPDF, Ghostscript) are deliberately not used.

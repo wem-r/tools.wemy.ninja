@@ -1,0 +1,19 @@
+<div class="tk-row"><span class="dim">from</span><select id="from"><option value="auto">auto-detect</option><option value="json">JSON</option><option value="yaml">YAML</option><option value="toml">TOML</option><option value="xml">XML</option></select>
+  <span class="dim">to</span><div class="tk-seg"><label><input type="radio" name="to" value="json" checked><span>JSON</span></label><label><input type="radio" name="to" value="yaml"><span>YAML</span></label><label><input type="radio" name="to" value="toml"><span>TOML</span></label><label><input type="radio" name="to" value="xml"><span>XML</span></label></div>
+  <label>indent <input type="number" id="ind" value="2" min="0" max="8"></label></div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>input</span></div><textarea id="in" class="tall" spellcheck="false">server:
+  name: tools.wemy.ninja
+  ports: [80, 443]
+  tls:
+    enabled: true
+    issuer: "Let's Encrypt"
+users:
+  - name: wem
+    admin: true
+  - name: guest
+    admin: false</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>output</span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" class="tall" readonly spellcheck="false"></textarea></div>
+</div>
+<div class="tk-msg" id="msg"></div>
+<p class="dim">TOML needs a table (object) at the top and can't hold null. XML maps attributes to "@name" keys and text to "#text".</p>

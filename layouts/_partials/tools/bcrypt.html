@@ -1,0 +1,10 @@
+<div class="tk-sec">hash</div>
+<div class="tk-row"><input id="pw" value="hunter2" spellcheck="false" autocomplete="off" style="flex:1"><label>cost <input type="number" id="cost" value="10" min="4" max="15"></label><button type="button" class="tk-btn primary" id="go">hash</button></div>
+<div class="tk-field"><div class="tk-label"><span>bcrypt hash</span><span class="r dim" id="time"></span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><input id="out" readonly spellcheck="false"></div>
+<div class="tk-sec">compare</div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>password</span></div><input id="cpw" value="hunter2" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>hash</span></div><input id="chash" value="" spellcheck="false" autocomplete="off"></div>
+</div>
+<div class="tk-msg" id="cmsg"></div>
+<p class="dim">Each cost step doubles the time. 10–12 is usual for logins today. Only the first 72 bytes of a password count.</p>

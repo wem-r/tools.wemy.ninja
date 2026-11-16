@@ -1,0 +1,7 @@
+<div class="tk-row"><select id="lang"><option value="sql">Standard SQL</option><option value="postgresql">PostgreSQL</option><option value="mysql">MySQL</option><option value="mariadb">MariaDB</option><option value="sqlite">SQLite</option><option value="tsql">SQL Server (T-SQL)</option><option value="plsql">Oracle PL/SQL</option><option value="bigquery">BigQuery</option><option value="snowflake">Snowflake</option><option value="redshift">Redshift</option><option value="spark">Spark</option></select>
+  <select id="case"><option value="upper">KEYWORDS</option><option value="lower">keywords</option><option value="preserve">keep case</option></select><label>indent <input type="number" id="ind" value="2" min="1" max="8"></label></div>
+<div class="tk-grid">
+  <div class="tk-field"><textarea id="in" class="tall" spellcheck="false">select u.id, u.name, count(o.id) as orders from users u left join orders o on o.user_id = u.id where u.created_at > '2026-01-01' and u.active = 1 group by u.id, u.name having count(o.id) > 3 order by orders desc limit 10;</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span></span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" class="tall" readonly spellcheck="false"></textarea></div>
+</div>
+<div class="tk-msg" id="msg"></div>

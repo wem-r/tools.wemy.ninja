@@ -1,0 +1,8 @@
+<div class="tk-row"><span class="dim">size</span><div class="tk-seg"><label><input type="radio" name="bits" value="2048"><span>2048</span></label><label><input type="radio" name="bits" value="3072" checked><span>3072</span></label><label><input type="radio" name="bits" value="4096"><span>4096</span></label></div>
+  <input id="comment" value="wem@tools" class="short" spellcheck="false" title="comment for the OpenSSH key"><button type="button" class="tk-btn primary" id="go">generate</button><span class="dim" id="time"></span></div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>public key (SPKI PEM)</span><span class="r"><button type="button" class="tk-copy" data-copy="#pub">copy</button><button type="button" class="tk-copy" id="dlpub">save</button></span></div><textarea id="pub" class="tall" readonly spellcheck="false"></textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>private key (PKCS#8 PEM)</span><span class="r"><button type="button" class="tk-copy" data-copy="#priv">copy</button><button type="button" class="tk-copy" id="dlpriv">save</button></span></div><textarea id="priv" class="tall" readonly spellcheck="false"></textarea></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span>OpenSSH public key (authorized_keys)</span><span class="r"><button type="button" class="tk-copy" data-copy="#ssh">copy</button></span></div><textarea id="ssh" readonly spellcheck="false"></textarea></div>
+<p class="dim">Generated with the browser's Web Crypto API; the private key never leaves this page. For SSH, prefer <code>ssh-keygen -t ed25519</code> on your own machine.</p>

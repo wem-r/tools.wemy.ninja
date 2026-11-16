@@ -1,0 +1,9 @@
+<div class="tk-field"><div class="tk-label"><span>docker run command(s) — one per line, \ continuations are fine</span></div><textarea id="in" class="tall" spellcheck="false">docker run -d --name nginx --restart unless-stopped \
+  -p 80:80 -p 443:443 \
+  -v /srv/www:/usr/share/nginx/html:ro -v ./conf:/etc/nginx/conf.d \
+  -e TZ=Europe/Paris --env-file .env \
+  --network web --label traefik.enable=true \
+  --memory 512m --cpus 1.5 --health-cmd "curl -f http://localhost/ || exit 1" \
+  nginx:1.27-alpine nginx -g "daemon off;"</textarea></div>
+<div class="tk-msg" id="msg"></div>
+<div class="tk-field"><div class="tk-label"><span>compose.yaml</span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" class="tall" readonly spellcheck="false"></textarea></div>

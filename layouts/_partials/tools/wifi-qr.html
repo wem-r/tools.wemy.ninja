@@ -1,0 +1,8 @@
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>network name (SSID)</span></div><input id="ssid" value="wem-lab" spellcheck="false"></div>
+  <div class="tk-field"><div class="tk-label"><span>password</span></div><input id="pw" value="correct-horse-battery" spellcheck="false" autocomplete="off"></div>
+</div>
+<div class="tk-row"><div class="tk-seg"><label><input type="radio" name="sec" value="WPA" checked><span>WPA / WPA2 / WPA3</span></label><label><input type="radio" name="sec" value="WEP"><span>WEP</span></label><label><input type="radio" name="sec" value="nopass"><span>open</span></label></div>
+  <label class="chk"><input type="checkbox" id="hidden">hidden network</label><button type="button" class="tk-btn primary" id="png">save PNG</button><button type="button" class="tk-btn" id="print">print card</button></div>
+<div class="tk-field"><div class="tk-label"><span>QR payload</span></div><pre class="tk-out" id="payload"></pre></div>
+<canvas id="cv" style="border-radius:4px;max-width:100%"></canvas>

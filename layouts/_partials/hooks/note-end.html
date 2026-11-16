@@ -5,8 +5,9 @@
   {{ partial (printf "tools/%s.html" .) $ }}
 </div>
 {{- with resources.Get (printf "tools/%s.js" .) }}
-{{- /* externals: Node-only modules some packages require() in a branch that never runs in a browser */ -}}
-{{- $js := . | js.Build (dict "minify" hugo.IsProduction "format" "esm" "target" "es2022" "externals" (slice "fs" "path" "crypto" "module" "url" "worker_threads") "sourceMap" (cond hugo.IsProduction "" "inline")) | fingerprint }}
+{{- /* externals: Node-only modules some packages require() in a branch that never runs in a browser; crypto is shimmed
+     with an empty module because bcryptjs imports it statically (it uses Web Crypto in the browser) */ -}}
+{{- $js := . | js.Build (dict "minify" hugo.IsProduction "format" "esm" "target" "es2022" "externals" (slice "fs" "path" "module" "url" "worker_threads") "shims" (dict "crypto" "js/shims/empty.js") "sourceMap" (cond hugo.IsProduction "" "inline")) | fingerprint }}
 <script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 {{- end }}
 {{- end }}

@@ -1,0 +1,8 @@
+<div class="tk-sec">file → Base64</div>
+{{ partial "tools/_drop.html" (dict "text" "drop a file — encoded in your browser, never uploaded") }}
+<div class="tk-row" style="margin-top:10px"><div class="tk-seg"><label><input type="radio" name="fmt" value="b64" checked><span>Base64</span></label><label><input type="radio" name="fmt" value="uri"><span>data URI</span></label><label><input type="radio" name="fmt" value="wrap"><span>Base64, 76 columns</span></label></div><span class="dim" id="info"></span></div>
+<div class="tk-field"><div class="tk-label"><span></span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" readonly spellcheck="false"></textarea></div>
+<div class="tk-sec">Base64 → file</div>
+<div class="tk-field"><textarea id="in" spellcheck="false" placeholder="paste Base64 or a data: URI"></textarea></div>
+<div class="tk-row"><input id="name" value="file.bin" class="short" spellcheck="false"><button type="button" class="tk-btn primary" id="save">save file</button><span class="dim" id="det"></span></div>
+<div id="pvbox"></div>

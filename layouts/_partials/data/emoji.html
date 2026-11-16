@@ -1,0 +1,3 @@
+{{- /* Emoji by group, from unicode-emoji-json (MIT), minified and fingerprinted. */ -}}
+{{- $r := resources.Get "vendor/emoji/data-by-group.json" | minify | fingerprint }}
+{{- return $r }}

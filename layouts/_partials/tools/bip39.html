@@ -1,0 +1,13 @@
+<div class="tk-row"><span class="dim">words</span><div class="tk-seg">
+  <label><input type="radio" name="n" value="128"><span>12</span></label><label><input type="radio" name="n" value="160"><span>15</span></label><label><input type="radio" name="n" value="192"><span>18</span></label>
+  <label><input type="radio" name="n" value="224"><span>21</span></label><label><input type="radio" name="n" value="256" checked><span>24</span></label></div>
+  <select id="lang"><option value="english">English</option><option value="french">French</option><option value="spanish">Spanish</option><option value="italian">Italian</option></select>
+  <button type="button" class="tk-btn primary" id="go">generate</button></div>
+<div class="tk-field"><div class="tk-label"><span>mnemonic — or paste one to check it</span><span class="r"><button type="button" class="tk-copy" data-copy="#m">copy</button></span></div><textarea id="m" spellcheck="false"></textarea></div>
+<div class="tk-msg" id="msg"></div>
+<div class="tk-field"><div class="tk-label"><span>optional passphrase ("25th word")</span></div><input id="pp" value="" spellcheck="false" autocomplete="off"></div>
+<table class="tk-kv" id="out"></table>
+<div class="tk-sec">entropy → mnemonic</div>
+<div class="tk-field"><input id="ent" placeholder="hex entropy: 32, 40, 48, 56 or 64 hex digits" spellcheck="false" autocomplete="off"></div>
+<pre class="tk-out" id="eout"></pre>
+<p class="dim">Generate real wallet seeds only on an offline, trusted device. This page sends nothing, but a browser full of extensions is not a vault.</p>

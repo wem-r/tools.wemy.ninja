@@ -1,0 +1,10 @@
+<div class="tk-row"><div class="tk-seg"><label><input type="radio" name="dir" value="j2c" checked><span>JSON → CSV</span></label><label><input type="radio" name="dir" value="c2j"><span>CSV → JSON</span></label></div>
+  <select id="sep"><option value=",">comma</option><option value=";">semicolon</option><option value="&#9;">tab</option></select><label class="chk"><input type="checkbox" id="flat" checked>flatten nested keys (a.b)</label><label class="chk"><input type="checkbox" id="types" checked>numbers &amp; booleans (CSV → JSON)</label></div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>input</span></div><textarea id="in" class="tall" spellcheck="false">[
+  { "ip": "203.0.113.7", "country": "NL", "hits": 42, "tags": ["ssh", "bf"], "meta": { "asn": 64500 } },
+  { "ip": "198.51.100.9", "country": "FR", "hits": 3, "meta": { "asn": 64501, "note": "office, VPN" } }
+]</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>output</span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button><button type="button" class="tk-copy" id="dl">save</button></span></div><textarea id="out" class="tall" readonly spellcheck="false"></textarea></div>
+</div>
+<div class="tk-msg" id="msg"></div>
