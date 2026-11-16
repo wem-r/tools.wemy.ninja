@@ -72,7 +72,14 @@ defaultContentLanguageInSubdir = false
     tree_filter = true        # filter box above the tree
     tree_count = "tools"      # "[1] tree … N tools"
     note_label = "slug"
-    aside = "info"            # right column: [3] info + [4] favourites
+    aside = "info"            # [3] info (+ [4] favourites unless layout = "left")
+    layout = "left"           # info under the tree, no favourites tile
+    info_desc = false         # the description is already under the title
+    about = [
+      "inspired by [it-tools](https://github.com/CorentinTh/it-tools)",
+      "hosted on GitHub Pages",
+      "source [wem-r/tools.wemy.ninja ↗](https://github.com/wem-r/tools.wemy.ninja)",
+    ]
     [[params.wem.workspaces]]
       name = "kb"
       url = "https://wemy.ninja/kb/"
