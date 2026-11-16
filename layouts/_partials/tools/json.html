@@ -1,0 +1,11 @@
+<div class="tk-row"><div class="tk-seg">
+  <label><input type="radio" name="op" value="2" checked><span>format (2)</span></label>
+  <label><input type="radio" name="op" value="4"><span>format (4)</span></label>
+  <label><input type="radio" name="op" value="tab"><span>format (tab)</span></label>
+  <label><input type="radio" name="op" value="min"><span>minify</span></label>
+</div><label class="chk"><input type="checkbox" id="sort">sort keys</label><label class="chk"><input type="checkbox" id="ascii">escape non-ASCII</label></div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>input</span></div><textarea id="in" class="tall" spellcheck="false">{"name":"wem","tools":["subnet","hash","jwt"],"nested":{"ok":true,"n":42,"é":null}}</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>output</span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" class="tall" readonly spellcheck="false"></textarea></div>
+</div>
+<div class="tk-msg" id="msg"></div>

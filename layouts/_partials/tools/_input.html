@@ -1,0 +1,14 @@
+{{- /* Shared "text or file" input block. Ids: #txt, #fmt (radio name), #file, #drop, #fname */ -}}
+<div class="tk-row"><div class="tk-seg">
+  <label><input type="radio" name="src" value="text" checked><span>text</span></label>
+  <label><input type="radio" name="src" value="file"><span>file</span></label>
+</div>
+<div class="tk-seg" id="fmtseg">
+  <label><input type="radio" name="fmt" value="utf8" checked><span>utf-8</span></label>
+  <label><input type="radio" name="fmt" value="hex"><span>hex</span></label>
+  <label><input type="radio" name="fmt" value="base64"><span>base64</span></label>
+</div></div>
+<div class="tk-field" id="textbox"><textarea id="txt" spellcheck="false">{{ .default }}</textarea></div>
+<div class="tk-field" id="filebox" hidden>
+  <label class="tk-drop" id="drop"><input type="file" id="file" hidden><span id="fname">drop a file here, or click to choose — it is read locally, never uploaded</span></label>
+</div>

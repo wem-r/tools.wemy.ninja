@@ -1,0 +1,8 @@
+{{- /* MAC vendor table, compacted at build time: { "001A2B": "Vendor name", … }
+     (first line of each IEEE registry entry, from the oui-data npm package). */ -}}
+{{- $s := newScratch }}
+{{- range $k, $v := resources.Get "vendor/oui/index.json" | transform.Unmarshal }}
+  {{- $s.SetInMap "m" $k (index (split $v "\n") 0) }}
+{{- end }}
+{{- $r := $s.Get "m" | jsonify | resources.FromString "data/oui.json" | fingerprint }}
+{{- return $r }}

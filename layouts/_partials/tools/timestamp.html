@@ -1,0 +1,15 @@
+<div class="tk-field"><div class="tk-label"><span>timestamp or date — number, ISO 8601, RFC 2822…</span><span class="r"><button type="button" class="tk-btn" id="now">now</button></span></div>
+  <input id="in" value="1763251200" spellcheck="false" autocomplete="off"></div>
+<div class="tk-row"><span class="dim">read numbers as</span><div class="tk-seg">
+  <label><input type="radio" name="unit" value="auto" checked><span>auto</span></label>
+  <label><input type="radio" name="unit" value="s"><span>s</span></label>
+  <label><input type="radio" name="unit" value="ms"><span>ms</span></label>
+  <label><input type="radio" name="unit" value="us"><span>µs</span></label>
+  <label><input type="radio" name="unit" value="ns"><span>ns</span></label>
+  <label><input type="radio" name="unit" value="filetime"><span>FILETIME / LDAP</span></label>
+</div></div>
+<div class="tk-msg" id="msg"></div>
+<table class="tk-kv" id="out"></table>
+<div class="tk-sec">pick a date</div>
+<div class="tk-row"><input type="datetime-local" id="pick" step="1" style="width:auto"><span class="dim">local time</span></div>
+<p class="dim">Now: <code id="clock"></code></p>

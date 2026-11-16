@@ -1,0 +1,3 @@
+{{- /* EFF large wordlist (7776 words) for passphrases, from the eff-diceware-passphrase npm package. */ -}}
+{{- $r := resources.Get "vendor/eff/wordlist.json" | minify | fingerprint }}
+{{- return $r }}

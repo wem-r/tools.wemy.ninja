@@ -1,0 +1,26 @@
+<div class="tk-field"><div class="tk-label"><span>token</span><span class="r dim" id="alg"></span></div>
+  <textarea id="tok" spellcheck="false">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ3ZW0iLCJuYW1lIjoiV2VtIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYzMjUxMjAwLCJleHAiOjE3NjMzMzc2MDB9.P5cQqb78vSmFQsoCtHB_Y0q_gLw7WBcIJa3xLLOZVyc</textarea></div>
+<div class="tk-msg" id="msg"></div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>header</span></div><pre class="tk-out" id="hdr"></pre></div>
+  <div class="tk-field"><div class="tk-label"><span>payload</span></div><pre class="tk-out" id="pay"></pre></div>
+</div>
+<table class="tk-kv" id="claims"></table>
+<div class="tk-sec">verify signature</div>
+<div class="tk-field"><div class="tk-label"><span>secret (HS*) or public key: PEM (SPKI / certificate) or JWK</span><span class="r"><label class="chk"><input type="checkbox" id="b64sec">secret is base64url</label></span></div>
+  <textarea id="key" spellcheck="false">change-me-to-a-long-random-secret</textarea></div>
+<div class="tk-msg" id="vmsg"></div>
+<div class="tk-sec">sign a new token</div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>algorithm</span></div><select id="salg">
+    <option>HS256</option><option>HS384</option><option>HS512</option><option>RS256</option><option>RS384</option><option>RS512</option>
+    <option>PS256</option><option>ES256</option><option>ES384</option><option>ES512</option><option>EdDSA</option></select></div>
+  <div class="tk-field"><div class="tk-label"><span>expires in</span></div><select id="sexp">
+    <option value="">no exp</option><option value="15m">15 minutes</option><option value="1h" selected>1 hour</option><option value="24h">1 day</option><option value="30d">30 days</option></select></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span>payload (JSON) — iat is added</span></div><textarea id="spay" spellcheck="false">{ "sub": "wem", "role": "admin" }</textarea></div>
+<div class="tk-field"><div class="tk-label"><span>secret (HS*) or private key: PKCS#8 PEM or JWK</span><span class="r"><button type="button" class="tk-btn" id="genkey">generate a key</button></span></div><textarea id="skey" spellcheck="false">change-me-to-a-long-random-secret</textarea></div>
+<div class="tk-row"><button type="button" class="tk-btn primary" id="sign">sign</button><span class="dim" id="pubnote"></span></div>
+<div class="tk-msg" id="smsg"></div>
+<div class="tk-field"><div class="tk-label"><span>signed token</span><span class="r"><button type="button" class="tk-copy" data-copy="#sout">copy</button></span></div><textarea id="sout" readonly spellcheck="false"></textarea></div>
+<div class="tk-field" id="pubbox" hidden><div class="tk-label"><span>matching public key (for verifying)</span><span class="r"><button type="button" class="tk-copy" data-copy="#pub">copy</button></span></div><textarea id="pub" readonly spellcheck="false"></textarea></div>

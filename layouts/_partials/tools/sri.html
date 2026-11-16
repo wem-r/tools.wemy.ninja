@@ -1,0 +1,13 @@
+{{ partial "tools/_input.html" (dict "default" "console.log('hello from tools.wemy.ninja');\n") }}
+<div class="tk-row"><span class="dim">algorithm</span><div class="tk-seg">
+  <label><input type="radio" name="alg" value="SHA-384" checked><span>sha384</span></label>
+  <label><input type="radio" name="alg" value="SHA-256"><span>sha256</span></label>
+  <label><input type="radio" name="alg" value="SHA-512"><span>sha512</span></label>
+</div><div class="tk-seg">
+  <label><input type="radio" name="tag" value="script" checked><span>&lt;script&gt;</span></label>
+  <label><input type="radio" name="tag" value="link"><span>&lt;link&gt;</span></label>
+</div></div>
+<div class="tk-field"><div class="tk-label"><span>URL for the tag</span></div><input id="url" value="https://cdn.example.com/lib.min.js" spellcheck="false" autocomplete="off"></div>
+<div class="tk-msg" id="msg"></div>
+<table class="tk-kv" id="out"></table>
+<p class="dim">Paste the file's exact content, or drop the file you will serve: a single changed byte gives a different hash. Files are not fetched from the URL (that would leak it, and most CDNs block it without CORS).</p>

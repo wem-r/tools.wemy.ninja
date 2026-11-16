@@ -1,0 +1,11 @@
+{{- /* Tool pages (front matter "tool: <name>"): the tool's form, then its script.
+     Markup: layouts/_partials/tools/<name>.html · logic: assets/tools/<name>.js */ -}}
+{{- with .Params.tool }}
+<div class="tk" id="tk" data-tool="{{ . }}">
+  {{ partial (printf "tools/%s.html" .) $ }}
+</div>
+{{- with resources.Get (printf "tools/%s.js" .) }}
+{{- $js := . | js.Build (dict "minify" hugo.IsProduction "format" "esm" "target" "es2020" "sourceMap" (cond hugo.IsProduction "" "inline")) | fingerprint }}
+<script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{- end }}
+{{- end }}

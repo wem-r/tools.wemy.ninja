@@ -1,0 +1,8 @@
+{{ partial "tools/_input.html" (dict "default" "hello world") }}
+<div class="tk-row"><span class="dim">output</span><div class="tk-seg">
+  <label><input type="radio" name="out" value="hex" checked><span>hex</span></label>
+  <label><input type="radio" name="out" value="HEX"><span>HEX</span></label>
+  <label><input type="radio" name="out" value="base64"><span>base64</span></label>
+</div></div>
+<div class="tk-msg" id="msg"></div>
+<table class="tk-kv" id="out"></table>

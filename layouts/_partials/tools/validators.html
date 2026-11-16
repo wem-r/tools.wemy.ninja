@@ -1,0 +1,14 @@
+<div class="tk-field"><div class="tk-label"><span>email addresses or domain names — one per line</span></div>
+  <textarea id="in" class="tall" spellcheck="false">wem@wemy.ninja
+first.last+tag@sub.example.co.uk
+"quoted local"@example.com
+user@münchen.de
+bad..dots@example.com
+_dmarc.example.com
+xn--mnchen-3ya.de
+-starts-with-hyphen.com
+tools.wemy.ninja
+user@[192.168.1.1]
+a@b</textarea></div>
+<table class="tk-list" id="out"></table>
+<p class="dim">Syntax only (RFC 5321 / 5322 subset, RFC 1035 / 5891 for names): it cannot tell whether a mailbox or domain exists — that needs DNS, which this site never queries.</p>

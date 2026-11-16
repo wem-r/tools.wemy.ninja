@@ -1,0 +1,91 @@
+baseURL = "https://tools.wemy.ninja/"
+title = "Wem's tools"
+enableRobotsTXT = true
+enableGitInfo = true
+capitalizeListTitles = false
+
+# Shared theme: https://github.com/wem-r/hugo-theme-wem (git submodule in themes/wem)
+theme = "wem"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.168.0"
+  # Our own assets, plus data files from npm packages (bundled into the site at build time)
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "node_modules/oui-data"
+    target = "assets/vendor/oui"
+  [[module.mounts]]
+    source = "node_modules/port-numbers"
+    target = "assets/vendor/ports"
+  [[module.mounts]]
+    source = "node_modules/eff-diceware-passphrase"
+    target = "assets/vendor/eff"
+
+[languages.en]
+  label = "English"
+  weight = 1
+  contentDir = "content/en"
+  [languages.en.params]
+    description = "Small security & sysadmin tools that run entirely in your browser"
+
+[taxonomies]
+  tag = "tags"
+
+[outputFormats]
+  [outputFormats.searchindex]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "searchindex"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[params]
+  github_repo = "https://github.com/wem-r/tools.wemy.ninja"
+  github_branch = "main"
+
+  [params.wem]
+    noindex = true            # <meta name="robots" content="noindex, nofollow">
+    prompt = "wem@tools"
+    mode = "TOOL"             # status line
+    home_url = "https://wemy.ninja/"   # 0:home goes back to the main site
+    tree_root = "home"        # one tree for the whole site
+    tree_label = "/tools"
+    tree_labels = "slug"      # tools shown by slug, categories by title
+    tree_filter = true        # filter box above the tree
+    tree_count = "tools"      # "[1] tree … N tools"
+    note_label = "slug"
+    aside = "info"            # right column: [3] info + [4] favourites
+    [[params.wem.workspaces]]
+      name = "kb"
+      url = "https://wemy.ninja/kb/"
+      external = true
+    [[params.wem.workspaces]]
+      name = "cheatsheets"
+      url = "https://wemy.ninja/cheatsheets/"
+      external = true
+    [[params.wem.workspaces]]
+      name = "blog"
+      url = "https://wemy.ninja/blog/"
+      external = true
+    [[params.wem.workspaces]]
+      name = "tools"
+      url = "/"
+      active = true

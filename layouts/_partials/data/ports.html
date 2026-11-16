@@ -1,0 +1,4 @@
+{{- /* IANA service names and port numbers, from the port-numbers npm package:
+     { "443/tcp": ["https", "http protocol over TLS/SSL"], … } — minified and fingerprinted. */ -}}
+{{- $r := resources.Get "vendor/ports/index.json" | minify | fingerprint }}
+{{- return $r }}

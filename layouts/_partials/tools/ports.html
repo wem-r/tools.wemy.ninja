@@ -1,0 +1,11 @@
+<div class="tk-field">
+  <div class="tk-label"><span>port number, range (8000-8100), service or keyword</span><span class="r dim" id="cnt"></span></div>
+  <input id="in" value="443" spellcheck="false" autocomplete="off" data-ports="{{ (partial "data/ports.html" .).RelPermalink }}">
+</div>
+<div class="tk-row"><div class="tk-seg">
+  <label><input type="radio" name="proto" value="" checked><span>all</span></label>
+  <label><input type="radio" name="proto" value="tcp"><span>tcp</span></label>
+  <label><input type="radio" name="proto" value="udp"><span>udp</span></label>
+  <label><input type="radio" name="proto" value="sctp"><span>sctp</span></label>
+</div></div>
+<table class="tk-list"><thead><tr><th>port</th><th>proto</th><th>service</th><th>description</th></tr></thead><tbody id="out"></tbody></table>

@@ -1,0 +1,19 @@
+<div class="tk-field"><div class="tk-label"><span>URL</span></div>
+  <input id="in" value="https://user:pa%24%24@tools.wemy.ninja:8443/web/url/?q=caf%C3%A9+au+lait&amp;lang=en&amp;lang=fr#top" spellcheck="false" autocomplete="off"></div>
+<div class="tk-msg" id="msg"></div>
+<table class="tk-kv" id="out"></table>
+<div class="tk-sec">query parameters</div>
+<table class="tk-list" id="qs"></table>
+<div class="tk-row"><button type="button" class="tk-btn" id="addq">+ parameter</button></div>
+<div class="tk-sec">encode / decode</div>
+<div class="tk-row"><div class="tk-seg">
+  <label><input type="radio" name="mode" value="comp" checked><span>component</span></label>
+  <label><input type="radio" name="mode" value="uri"><span>whole URI</span></label>
+  <label><input type="radio" name="mode" value="form"><span>form (+ for space)</span></label>
+  <label><input type="radio" name="mode" value="all"><span>every byte</span></label>
+</div></div>
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>decoded</span></div><textarea id="plain" spellcheck="false">café au lait & crème / 100%</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>encoded</span></div><textarea id="coded" spellcheck="false"></textarea></div>
+</div>
+<div class="tk-msg" id="emsg"></div>

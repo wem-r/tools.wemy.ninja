@@ -1,0 +1,11 @@
+<div class="tk-grid">
+  <div class="tk-field"><div class="tk-label"><span>a</span></div><input id="a" value="65" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>b (exponent)</span></div><input id="b" value="17" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field"><div class="tk-label"><span>m (modulus)</span></div><input id="m" value="3233" spellcheck="false" autocomplete="off"></div>
+</div>
+<p class="dim">Integers of any size: decimal, 0x hex, 0b binary or 0o octal. Example: toy RSA with p = 61, q = 53 → n = 3233, φ = 3120, e = 17. Encrypt 65: 65¹⁷ mod 3233 = 2790. Private exponent: put a = 17, m = 3120 → a⁻¹ = 2753.</p>
+<div class="tk-msg" id="msg"></div>
+<table class="tk-kv" id="out"></table>
+<div class="tk-sec">factor</div>
+<div class="tk-row"><input id="f" value="600851475143" spellcheck="false" autocomplete="off" style="flex:1"><button type="button" class="tk-btn primary" id="fgo">factor</button></div>
+<table class="tk-kv" id="fout"></table>
