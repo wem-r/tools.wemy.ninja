@@ -1,0 +1,43 @@
+<div class="tk-row">
+  <div class="tk-field" style="flex:1 1 180px;margin:0"><div class="tk-label"><span>LHOST — your IP</span></div><input id="ip" value="10.10.14.1" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:0 0 110px;margin:0"><div class="tk-label"><span>LPORT</span></div><input id="port" value="9001" inputmode="numeric" spellcheck="false"></div>
+  <div class="tk-field" style="flex:0 0 160px;margin:0"><div class="tk-label"><span>shell</span></div><input id="shell" list="tk-shells" value="/bin/bash" spellcheck="false" autocomplete="off"><datalist id="tk-shells"></datalist></div>
+  <div class="tk-field" style="flex:0 0 180px;margin:0"><div class="tk-label"><span>encoding</span></div><select id="enc"></select></div>
+</div>
+<div class="tk-row">
+  <div class="tk-seg" id="type"><label><input type="radio" name="type" value="rev" checked><span>Reverse</span></label><label><input type="radio" name="type" value="bind"><span>Bind</span></label></div>
+  <div class="tk-seg" id="os"><label><input type="radio" name="os" value="" checked><span>All</span></label><label><input type="radio" name="os" value="nix"><span>Linux</span></label><label><input type="radio" name="os" value="win"><span>Windows</span></label></div>
+  <input id="filter" placeholder="filter payloads…" spellcheck="false" autocomplete="off" style="flex:1;min-width:120px">
+</div>
+<div class="tk-msg" id="msg"></div>
+<div class="tk-rev">
+  <nav class="tk-rev-list" id="list" aria-label="payloads"></nav>
+  <div class="tk-rev-out">
+    <div class="tk-rev-head"><b id="pname">—</b><span class="dim" id="pos"></span></div>
+    <div class="tk-field"><div class="tk-label"><span>command — run on the target</span><span class="r"><button type="button" class="tk-copy" data-copy="#cmd">copy</button></span></div><textarea id="cmd" readonly spellcheck="false" rows="4"></textarea></div>
+    <p class="dim" id="note"></p>
+    <div class="tk-field"><div class="tk-label"><span id="llabel">listener — run this on your box first</span><span class="r"><select id="lsnr" class="tk-mini"></select><button type="button" class="tk-copy" data-copy="#lcmd">copy</button></span></div><textarea id="lcmd" readonly spellcheck="false" rows="2"></textarea></div>
+  </div>
+</div>
+<p class="dim">For authorised testing of systems you own or have written permission to test. Every command is built in your browser from the IP and port above — nothing you type is sent anywhere.</p><div class="tk-row">
+  <div class="tk-field" style="flex:1 1 180px;margin:0"><div class="tk-label"><span>LHOST — your IP</span></div><input id="ip" value="10.10.14.1" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:0 0 110px;margin:0"><div class="tk-label"><span>LPORT</span></div><input id="port" value="9001" inputmode="numeric" spellcheck="false"></div>
+  <div class="tk-field" style="flex:0 0 160px;margin:0"><div class="tk-label"><span>shell</span></div><input id="shell" list="tk-shells" value="/bin/bash" spellcheck="false" autocomplete="off"><datalist id="tk-shells"></datalist></div>
+  <div class="tk-field" style="flex:0 0 180px;margin:0"><div class="tk-label"><span>encoding</span></div><select id="enc"></select></div>
+</div>
+<div class="tk-row">
+  <div class="tk-seg" id="type"><label><input type="radio" name="type" value="rev" checked><span>Reverse</span></label><label><input type="radio" name="type" value="bind"><span>Bind</span></label></div>
+  <div class="tk-seg" id="os"><label><input type="radio" name="os" value="" checked><span>All</span></label><label><input type="radio" name="os" value="nix"><span>Linux</span></label><label><input type="radio" name="os" value="win"><span>Windows</span></label></div>
+  <input id="filter" placeholder="filter payloads…" spellcheck="false" autocomplete="off" style="flex:1;min-width:120px">
+</div>
+<div class="tk-msg" id="msg"></div>
+<div class="tk-rev">
+  <nav class="tk-rev-list" id="list" aria-label="payloads"></nav>
+  <div class="tk-rev-out">
+    <div class="tk-rev-head"><b id="pname">—</b><span class="dim" id="pos"></span></div>
+    <div class="tk-field"><div class="tk-label"><span>command — run on the target</span><span class="r"><button type="button" class="tk-copy" data-copy="#cmd">copy</button></span></div><textarea id="cmd" readonly spellcheck="false" rows="4"></textarea></div>
+    <p class="dim" id="note"></p>
+    <div class="tk-field"><div class="tk-label"><span id="llabel">listener — run this on your box first</span><span class="r"><select id="lsnr" class="tk-mini"></select><button type="button" class="tk-copy" data-copy="#lcmd">copy</button></span></div><textarea id="lcmd" readonly spellcheck="false" rows="2"></textarea></div>
+  </div>
+</div>
+<p class="dim">For authorised testing of systems you own or have written permission to test. Every command is built in your browser from the IP and port above — nothing you type is sent anywhere.</p>
