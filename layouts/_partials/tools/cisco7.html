@@ -1,0 +1,8 @@
+<div class="tk-row">
+  <div class="tk-seg" id="mode"><label><input type="radio" name="mode" value="dec" checked><span>Decode</span></label><label><input type="radio" name="mode" value="enc"><span>Encode</span></label></div>
+  <div class="tk-seg" id="type"><label><input type="radio" name="type" value="cisco" checked><span>Cisco 7</span></label><label><input type="radio" name="type" value="juniper"><span>Juniper $9$</span></label></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span id="inl">encrypted value</span></div><textarea id="in" spellcheck="false" rows="2">094F471A1A0A</textarea></div>
+<div class="tk-msg" id="msg"></div>
+<div class="tk-field"><div class="tk-label"><span id="outl">plaintext</span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" readonly spellcheck="false" rows="2"></textarea></div>
+<p class="dim">Cisco type 7 (<code>service password-encryption</code>) and Juniper <code>$9$</code> are reversible obfuscation, not encryption — anyone with the config can recover the password. Use <code>type 8/9</code> (scrypt/PBKDF2) instead. All local.</p>

@@ -1,0 +1,31 @@
+<div class="tk-row">
+  <div class="tk-seg" id="mode"><label><input type="radio" name="mode" value="build" checked><span>Build</span></label><label><input type="radio" name="mode" value="explain"><span>Explain</span></label></div>
+  <div class="tk-seg" id="kind"><label><input type="radio" name="kind" value="spf" checked><span>SPF</span></label><label><input type="radio" name="kind" value="dmarc"><span>DMARC</span></label></div>
+</div>
+<div id="build">
+  <div class="tk-row"><div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>domain</span></div><input id="domain" value="example.com" spellcheck="false" autocomplete="off"></div></div>
+  <div id="spf-f">
+    <div class="tk-row">
+      <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>ip4 (space/comma)</span></div><input id="ip4" placeholder="203.0.113.0/24" spellcheck="false" autocomplete="off"></div>
+      <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>include</span></div><input id="include" placeholder="_spf.google.com" spellcheck="false" autocomplete="off"></div>
+    </div>
+    <div class="tk-row tk-checks">
+      <label><input type="checkbox" id="a"> a</label><label><input type="checkbox" id="mx"> mx</label>
+      <span style="display:inline-flex;gap:4px;align-items:center">all: <select id="all"><option value="~" selected>~ softfail</option><option value="-">- fail</option><option value="?">? neutral</option><option value="+">+ pass</option></select></span>
+    </div>
+  </div>
+  <div id="dmarc-f" hidden>
+    <div class="tk-row">
+      <span style="display:inline-flex;gap:4px;align-items:center">p: <select id="p"><option>none</option><option>quarantine</option><option>reject</option></select></span>
+      <span style="display:inline-flex;gap:4px;align-items:center">pct: <input id="pct" type="number" min="1" max="100" value="100" style="width:70px"></span>
+      <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>rua (reports)</span></div><input id="rua" placeholder="dmarc@example.com" spellcheck="false" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="tk-field"><div class="tk-label"><span id="rl">record</span><span class="r"><button type="button" class="tk-copy" data-copy="#rec">copy</button></span></div><textarea id="rec" readonly spellcheck="false" rows="2"></textarea></div>
+  <p class="dim" id="hosthint"></p>
+</div>
+<div id="explain" hidden>
+  <div class="tk-field"><div class="tk-label"><span>paste an SPF, DKIM or DMARC record</span></div><textarea id="exin" spellcheck="false" rows="3">v=DMARC1; p=reject; rua=mailto:dmarc@example.com; pct=100; adkim=s</textarea></div>
+  <div class="tk-msg" id="emsg"></div>
+  <table class="tk-list" id="exout"></table>
+</div>

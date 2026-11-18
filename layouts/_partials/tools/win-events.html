@@ -1,0 +1,7 @@
+<div class="tk-row">
+  <input id="q" data-ev="{{ (partial "data/win-events.html" .).RelPermalink }}" placeholder="search by ID, name or behaviour… (4624, lsass, kerberoast, persistence)" spellcheck="false" autocomplete="off" style="flex:1;min-width:220px">
+  <div class="tk-seg" id="log"><label><input type="radio" name="log" value="" checked><span>All</span></label><label><input type="radio" name="log" value="Security"><span>Security</span></label><label><input type="radio" name="log" value="Sysmon"><span>Sysmon</span></label><label><input type="radio" name="log" value="PowerShell"><span>PowerShell</span></label></div>
+</div>
+<div class="tk-msg" id="msg">loading…</div>
+<table class="tk-list" id="out"></table>
+<p class="dim">The event IDs worth knowing for threat hunting and DFIR. Security events need the right audit policy; Sysmon needs a config. Curated reference.</p>

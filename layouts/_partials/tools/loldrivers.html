@@ -1,0 +1,10 @@
+<div class="tk-row">
+  <input id="q" data-ld="{{ (partial "data/loldrivers.html" .).RelPermalink }}" placeholder="search drivers… (name, company, SHA256, CVE)" spellcheck="false" autocomplete="off" style="flex:1;min-width:220px">
+  <div class="tk-seg" id="cat"><label><input type="radio" name="cat" value="" checked><span>All</span></label><label><input type="radio" name="cat" value="vulnerable"><span>Vulnerable</span></label><label><input type="radio" name="cat" value="malicious"><span>Malicious</span></label></div>
+</div>
+<div class="tk-msg" id="msg">loading…</div>
+<div class="tk-rev">
+  <nav class="tk-rev-list" id="list" aria-label="drivers"></nav>
+  <div class="tk-rev-out" id="detail"></div>
+</div>
+<p class="dim">Known-vulnerable and malicious Windows drivers (BYOVD — bring your own vulnerable driver). Red team: abuse paths. Blue team: block these hashes and watch Sysmon event 6. Data from LOLDrivers.</p>

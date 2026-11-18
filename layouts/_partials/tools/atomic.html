@@ -1,0 +1,10 @@
+<div class="tk-row">
+  <input id="q" data-atomic="{{ (partial "data/atomic.html" .).RelPermalink }}" placeholder="search Atomic tests… (T1003, mimikatz, scheduled task)" spellcheck="false" autocomplete="off" style="flex:1;min-width:220px">
+  <div class="tk-seg" id="plat"><label><input type="radio" name="plat" value="" checked><span>All</span></label><label><input type="radio" name="plat" value="windows"><span>Windows</span></label><label><input type="radio" name="plat" value="linux"><span>Linux</span></label><label><input type="radio" name="plat" value="macos"><span>macOS</span></label></div>
+</div>
+<div class="tk-msg" id="msg">loading…</div>
+<div class="tk-rev">
+  <nav class="tk-rev-list" id="list" aria-label="techniques"></nav>
+  <div class="tk-rev-out" id="detail"></div>
+</div>
+<p class="dim">Atomic Red Team tests: run the command on a test host to exercise a technique, then confirm your tooling caught it — and run the cleanup. For lab/authorised use only. <code>#{...}</code> are inputs with defaults shown.</p>

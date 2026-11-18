@@ -1,0 +1,26 @@
+<div class="tk-seg" id="type"><label><input type="radio" name="type" value="sigma" checked><span>Sigma</span></label><label><input type="radio" name="type" value="yara"><span>YARA</span></label></div>
+<div id="sigma-f">
+  <div class="tk-row">
+    <div class="tk-field" style="flex:2;margin:0"><div class="tk-label"><span>title</span></div><input id="s-title" value="Suspicious PowerShell Download" spellcheck="false" autocomplete="off"></div>
+    <div class="tk-field" style="flex:0 0 130px;margin:0"><div class="tk-label"><span>ATT&CK</span></div><input id="s-mitre" value="T1059.001" spellcheck="false" autocomplete="off"></div>
+    <div class="tk-field" style="flex:0 0 130px;margin:0"><div class="tk-label"><span>level</span></div><select id="s-level"><option>low</option><option selected>medium</option><option>high</option><option>critical</option></select></div>
+  </div>
+  <div class="tk-row">
+    <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>logsource category</span></div><input id="s-ls" value="process_creation" spellcheck="false" autocomplete="off"></div>
+    <div class="tk-field" style="flex:0 0 140px;margin:0"><div class="tk-label"><span>product</span></div><input id="s-prod" value="windows" spellcheck="false" autocomplete="off"></div>
+  </div>
+  <div class="tk-field"><div class="tk-label"><span>detection fields — one per line, <code>Field|modifier: value</code></span></div><textarea id="s-fields" spellcheck="false" rows="3">Image|endswith: \powershell.exe
+CommandLine|contains: DownloadString</textarea></div>
+</div>
+<div id="yara-f" hidden>
+  <div class="tk-row">
+    <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>rule name</span></div><input id="y-name" value="suspicious_dropper" spellcheck="false" autocomplete="off"></div>
+    <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>description</span></div><input id="y-desc" value="Detects the dropper" spellcheck="false" autocomplete="off"></div>
+  </div>
+  <div class="tk-field"><div class="tk-label"><span>strings — one per line (text, or hex like <code>4D 5A 90</code>)</span></div><textarea id="y-strings" spellcheck="false" rows="3">This program cannot be run
+cmd.exe /c
+4D 5A 90 00</textarea></div>
+  <div class="tk-field"><div class="tk-label"><span>sample hashes (optional)</span></div><input id="y-hashes" placeholder="sha256, sha256…" spellcheck="false" autocomplete="off"></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span id="outl">rule</span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" readonly spellcheck="false" rows="14"></textarea></div>
+<p class="dim">A valid starting skeleton to refine, not a finished detection — tune the fields and test against real data before deploying.</p>

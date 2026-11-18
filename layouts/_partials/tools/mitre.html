@@ -1,0 +1,10 @@
+<div class="tk-row">
+  <input id="q" data-mitre="{{ (partial "data/mitre-attack.html" .).RelPermalink }}" placeholder="search ATT&CK… (T1059, kerberoast, lsass, persistence)" spellcheck="false" autocomplete="off" style="flex:1;min-width:220px">
+  <select id="tactic" style="flex:0 0 200px"></select>
+</div>
+<div class="tk-msg" id="msg">loading…</div>
+<div class="tk-rev">
+  <nav class="tk-rev-list" id="list" aria-label="techniques"></nav>
+  <div class="tk-rev-out" id="detail"></div>
+</div>
+<p class="dim">MITRE ATT&CK Enterprise techniques. Pair with the Atomic Red Team tool to exercise a technique and the Sigma/YARA tool to detect it.</p>

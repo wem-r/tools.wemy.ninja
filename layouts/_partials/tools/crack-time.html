@@ -1,0 +1,12 @@
+<div class="tk-seg" id="mode"><label><input type="radio" name="mode" value="charset" checked><span>Charset + length</span></label><label><input type="radio" name="mode" value="mask"><span>hashcat mask</span></label></div>
+<div id="p-charset">
+  <div class="tk-row tk-checks" id="sets"></div>
+  <div class="tk-field" style="max-width:220px"><div class="tk-label"><span>length</span></div><input id="len" type="number" min="1" max="64" value="8"></div>
+</div>
+<div id="p-mask" hidden>
+  <div class="tk-field"><div class="tk-label"><span>mask (?l ?u ?d ?s ?a …)</span></div><input id="mask" value="?u?l?l?l?l?d?d?d" spellcheck="false" autocomplete="off"></div>
+</div>
+<table class="tk-kv" id="summary"></table>
+<div class="tk-sec">average time to crack</div>
+<table class="tk-list" id="times"></table>
+<p class="dim">Keyspace assumes brute force over the full character set. Real passwords fall much faster to wordlists + rules — a strong hash (bcrypt, sha512crypt) and length are what buy time.</p>

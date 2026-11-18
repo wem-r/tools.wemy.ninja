@@ -1,0 +1,2 @@
+{{- $r := resources.Get "data/loldrivers.json" | minify | fingerprint }}
+{{- return $r }}

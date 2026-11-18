@@ -1,6 +1,6 @@
 import { $, $$, el, live, pick, msg, copyBtn } from '../js/tk.js';
 
-const SRC = { gtfobins: ['GTFOBins', 'unix'], lolbas: ['LOLBAS', 'win'], wadcoms: ['WADComs', 'ad'] };
+const SRC = { gtfobins: ['GTFOBins', 'unix'], lolbas: ['LOLBAS', 'win'], wadcoms: ['WADComs', 'ad'], gtfoargs: ['GTFOArgs', 'args'], lolrmm: ['LOLRMM', 'rmm'] };
 let DATA = [], current = null;
 
 function list() {

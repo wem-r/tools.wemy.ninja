@@ -1,0 +1,20 @@
+<div class="tk-row">
+  <div class="tk-field" style="flex:2 1 320px;margin:0"><div class="tk-label"><span>action</span><span class="r"><input id="tf" placeholder="filter…" spellcheck="false" autocomplete="off" style="width:120px;font-size:11px"></span></div><select id="action" size="8"></select></div>
+  <div style="flex:1 1 240px;display:flex;flex-direction:column;gap:8px">
+    <div class="tk-field" style="margin:0"><div class="tk-label"><span>domain</span></div><input id="domain" value="corp.local" spellcheck="false" autocomplete="off"></div>
+    <div class="tk-field" style="margin:0"><div class="tk-label"><span>username</span></div><input id="user" value="jsmith" spellcheck="false" autocomplete="off"></div>
+    <div class="tk-field" style="margin:0"><div class="tk-label"><span>password</span></div><input id="pass" value="Passw0rd!" spellcheck="false" autocomplete="off"></div>
+  </div>
+</div>
+<div class="tk-row">
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>NT hash (instead of password)</span></div><input id="hash" placeholder="aad3b…:31d6c…  or just the NT half" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>target host</span></div><input id="target" value="10.10.10.10" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>DC IP</span></div><input id="dcip" value="10.10.10.5" spellcheck="false" autocomplete="off"></div>
+</div>
+<div class="tk-row">
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>extra (command / user / etc.)</span></div><input id="extra" placeholder="whoami  ·  krbtgt" spellcheck="false" autocomplete="off"></div>
+  <label class="tk-check"><input type="checkbox" id="kerb"> use Kerberos (-k -no-pass)</label>
+</div>
+<div class="tk-field"><div class="tk-label"><span id="cl">command</span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" readonly spellcheck="false" rows="2"></textarea></div>
+<div class="tk-field" id="altbox" hidden><div class="tk-label"><span>NetExec equivalent</span><span class="r"><button type="button" class="tk-copy" data-copy="#alt">copy</button></span></div><textarea id="alt" readonly spellcheck="false" rows="2"></textarea></div>
+<p class="dim">For authorised AD assessments. Commands are formatted in your browser; swap in your own wordlists/targets. Pass-the-hash takes the NT hash in the field above.</p>

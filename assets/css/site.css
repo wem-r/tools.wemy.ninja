@@ -185,3 +185,11 @@ table.tk-ascii td { padding: 1px 8px 1px 0; }
 select[size] { height: auto; font-family: var(--mono, monospace); font-size: 12px; }
 select optgroup { font-style: normal; }
 .tk-rev-item .tag { color: var(--yel); }
+
+/* ---------- red/blue/purple batch 2 ---------- */
+.tk-meter { height: 8px; background: var(--line-soft); border-radius: 4px; overflow: hidden; margin: 10px 0 4px; }
+.tk-meter-bar { height: 100%; width: 0; border-radius: 4px; transition: width .2s, background .2s; }
+.tk-fb { margin: 8px 0 0; padding-left: 18px; color: var(--dim); font-size: 13px; }
+.tk-fb li { margin: 2px 0; }
+.tk-list tr.hit td { background: color-mix(in srgb, var(--cyan) 12%, transparent); }
+.tk-list tr.hit code { color: var(--strong); font-weight: 600; }

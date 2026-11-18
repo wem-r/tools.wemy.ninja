@@ -84,8 +84,15 @@ Offensive datasets (built into `assets/data/*.json` by the scripts in `scripts/`
 | [GTFOBins](https://gtfobins.github.io/) | LOLbins lookup (Unix) | CC BY-NC-SA 4.0 |
 | [LOLBAS](https://lolbas-project.github.io/) | LOLbins lookup (Windows) | GPL-3.0 |
 | [WADComs](https://wadcoms.github.io/) | LOLbins lookup (Active Directory) | GPL-3.0 |
+| [GTFOArgs](https://gtfoargs.github.io/) | LOLbins lookup (argument injection) | MIT |
+| [LOLRMM](https://lolrmm.io/) | LOLbins lookup (remote-management tools) | GPL-3.0 |
+| [LOLDrivers](https://www.loldrivers.io/) | Vulnerable drivers | MIT |
+| [MITRE ATT&CK](https://attack.mitre.org/) | ATT&CK lookup | ATT&CK Terms of Use (MITRE) |
+| [Atomic Red Team](https://github.com/redcanaryco/atomic-red-team) | Atomic Red Team lookup | MIT |
 | [DefaultCreds-cheat-sheet](https://github.com/ihebski/DefaultCreds-cheat-sheet) | Default credentials | MIT |
 
-The NT / MD4 / MD5 / HMAC-MD5 used by the NTLM tool are implemented from scratch in `assets/tools/lib/ntlm.js` (no dependency). XSS and SQLi payloads are adapted from PortSwigger's cheat sheets and PayloadsAllTheThings.
+The Windows Event ID reference is hand-curated (`scripts/gen-win-events.mjs`). The NT / MD4 / MD5 / HMAC-MD5 (NTLM tool), the single-block DES (LM hash), and the LM / MySQL / md5crypt hashers are implemented from scratch in `assets/tools/lib/` with no dependency. XSS and SQLi payloads are adapted from PortSwigger's cheat sheets and PayloadsAllTheThings. Cisco type 7 and Juniper $9$ are reversible obfuscation implemented in-repo.
+
+Each `assets/data/*.json` is rebuilt by its `scripts/gen-*.mjs`.
 
 AGPL engines (MuPDF, Ghostscript) are deliberately not used.

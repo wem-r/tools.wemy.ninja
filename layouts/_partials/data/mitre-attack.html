@@ -1,0 +1,2 @@
+{{- $r := resources.Get "data/mitre-attack.json" | minify | fingerprint }}
+{{- return $r }}
