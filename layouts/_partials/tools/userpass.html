@@ -1,0 +1,29 @@
+<div class="tk-seg" id="mode"><label><input type="radio" name="mode" value="user" checked><span>Usernames</span></label><label><input type="radio" name="mode" value="spray"><span>Password spray</span></label></div>
+
+<div id="p-user">
+  <div class="tk-field"><div class="tk-label"><span>full names — one per line</span></div><textarea id="names" spellcheck="false" rows="4">John Smith
+María García-López
+Robert "Bob" O'Brien</textarea></div>
+  <div class="tk-row tk-checks" id="fmts"></div>
+  <div class="tk-row">
+    <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>append domain (optional)</span></div><input id="domain" placeholder="@corp.local" spellcheck="false" autocomplete="off"></div>
+    <label class="tk-check"><input type="checkbox" id="upper"> UPPERCASE</label>
+  </div>
+</div>
+
+<div id="p-spray" hidden>
+  <div class="tk-row">
+    <div class="tk-field" style="flex:2;margin:0"><div class="tk-label"><span>base words (company, product…)</span></div><input id="bases" value="Acme, Welcome, Password" spellcheck="false" autocomplete="off"></div>
+    <div class="tk-field" style="flex:0 0 90px;margin:0"><div class="tk-label"><span>year</span></div><input id="year" type="number" value="2026"></div>
+  </div>
+  <div class="tk-row tk-checks">
+    <label><input type="checkbox" id="seasons" checked> seasons</label>
+    <label><input type="checkbox" id="months"> months</label>
+    <label><input type="checkbox" id="leet"> leetspeak</label>
+    <label><input type="checkbox" id="cap" checked> Capitalise</label>
+  </div>
+  <div class="tk-field"><div class="tk-label"><span>suffixes — comma separated</span></div><input id="suffixes" value=", !, 1, 123, @, #, 2025, 2026" spellcheck="false" autocomplete="off"></div>
+</div>
+
+<div class="tk-field"><div class="tk-label"><span id="outl">output</span><span class="r"><span class="dim" id="cnt"></span> <button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" readonly spellcheck="false" rows="8"></textarea></div>
+<p class="dim">Candidate lists for accounts you are authorised to test. Spraying real accounts without permission is illegal and will lock people out.</p>

@@ -77,4 +77,15 @@ All run in the browser; none is modified.
 | [figlet.js](https://github.com/patorjk/figlet.js) + its FIGlet fonts | ASCII art | MIT (fonts: see each font's header) |
 | [unicode-emoji-json](https://github.com/muan/unicode-emoji-json) (Unicode data) | emoji | MIT (data: Unicode licence) |
 
+Offensive datasets (built into `assets/data/*.json` by the scripts in `scripts/`, see below):
+
+| Dataset | used by | licence |
+| --- | --- | --- |
+| [GTFOBins](https://gtfobins.github.io/) | LOLbins lookup (Unix) | CC BY-NC-SA 4.0 |
+| [LOLBAS](https://lolbas-project.github.io/) | LOLbins lookup (Windows) | GPL-3.0 |
+| [WADComs](https://wadcoms.github.io/) | LOLbins lookup (Active Directory) | GPL-3.0 |
+| [DefaultCreds-cheat-sheet](https://github.com/ihebski/DefaultCreds-cheat-sheet) | Default credentials | MIT |
+
+The NT / MD4 / MD5 / HMAC-MD5 used by the NTLM tool are implemented from scratch in `assets/tools/lib/ntlm.js` (no dependency). XSS and SQLi payloads are adapted from PortSwigger's cheat sheets and PayloadsAllTheThings.
+
 AGPL engines (MuPDF, Ghostscript) are deliberately not used.

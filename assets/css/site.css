@@ -175,3 +175,13 @@ table.tk-ascii td { padding: 1px 8px 1px 0; }
 .tk-rev-out textarea { white-space: pre; overflow-wrap: normal; }
 .tk-mini { font-size: 11px; padding: 1px 4px; }
 @media (max-width: 640px) { .tk-rev { grid-template-columns: 1fr; } .tk-rev-list { max-height: 220px; } }
+/* ---------- offensive batch: checkbox rows, details, multi-selects ---------- */
+.tk-checks { flex-wrap: wrap; gap: 6px 16px; align-items: center; }
+.tk-checks label, label.tk-check { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--fg); cursor: pointer; margin: 0; }
+.tk-checks input[type=checkbox], label.tk-check input { margin: 0; }
+.tk-details { border: 1px solid var(--line); border-radius: var(--rad, 4px); padding: 0 10px; margin: 6px 0; }
+.tk-details > summary { cursor: pointer; padding: 8px 2px; color: var(--cyan); font-size: 13px; }
+.tk-details[open] > summary { border-bottom: 1px solid var(--line-soft); margin-bottom: 8px; }
+select[size] { height: auto; font-family: var(--mono, monospace); font-size: 12px; }
+select optgroup { font-style: normal; }
+.tk-rev-item .tag { color: var(--yel); }

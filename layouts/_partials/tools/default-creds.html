@@ -1,0 +1,8 @@
+<div class="tk-row">
+  <input id="q" data-creds="{{ (partial "data/default-creds.html" .).RelPermalink }}" placeholder="search vendor or product… (e.g. cisco, tomcat, router)" spellcheck="false" autocomplete="off" style="flex:1;min-width:220px">
+  <label class="tk-check"><input type="checkbox" id="blanks"> show blank/empty only</label>
+</div>
+<div class="tk-msg" id="msg">loading…</div>
+<table class="tk-list" id="out"></table>
+<p class="dim" id="more"></p>
+<p class="dim">Default factory credentials by product. Try them only against devices you own or are authorised to test. Data from the DefaultCreds cheat sheet.</p>

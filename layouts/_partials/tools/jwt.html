@@ -24,3 +24,20 @@
 <div class="tk-msg" id="smsg"></div>
 <div class="tk-field"><div class="tk-label"><span>signed token</span><span class="r"><button type="button" class="tk-copy" data-copy="#sout">copy</button></span></div><textarea id="sout" readonly spellcheck="false"></textarea></div>
 <div class="tk-field" id="pubbox" hidden><div class="tk-label"><span>matching public key (for verifying)</span><span class="r"><button type="button" class="tk-copy" data-copy="#pub">copy</button></span></div><textarea id="pub" readonly spellcheck="false"></textarea></div>
+<div class="tk-sec">attacks</div>
+<p class="dim">All against the token in the box at the top, in your browser. For testing your own apps.</p>
+<div class="tk-row">
+  <button type="button" class="tk-btn" id="aNone">forge alg:none</button>
+  <button type="button" class="tk-btn" id="aConfuse">RS→HS key confusion</button>
+  <button type="button" class="tk-btn" id="aBrute">brute-force HS secret ↓</button>
+</div>
+<div class="tk-field"><div class="tk-label"><span>wordlist for the brute-force — one secret per line</span></div><textarea id="wl" spellcheck="false" rows="3">secret
+password
+changeme
+jwt_secret
+your-256-bit-secret
+admin
+supersecret</textarea></div>
+<div class="tk-msg" id="amsg"></div>
+<div class="tk-field"><div class="tk-label"><span>attack output</span><span class="r"><button type="button" class="tk-copy" data-copy="#aout">copy</button></span></div><textarea id="aout" readonly spellcheck="false" rows="3"></textarea></div>
+<p class="dim">alg:none and key-confusion forgeries are only accepted by libraries that fail to pin the algorithm — which is exactly the bug you are testing for. RS→HS confusion uses the public key (PEM) from the <em>verify</em> box above as the HMAC secret.</p>

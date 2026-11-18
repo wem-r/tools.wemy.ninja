@@ -1,0 +1,38 @@
+<div class="tk-row">
+  <div class="tk-field" style="flex:2 1 260px;margin:0"><div class="tk-label"><span>target(s)</span></div><input id="target" value="10.10.10.0/24" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:1 1 180px;margin:0"><div class="tk-label"><span>preset</span></div><select id="preset"><option value="">— custom —</option></select></div>
+  <div class="tk-field" style="flex:1 1 220px;margin:0"><div class="tk-label"><span>scan type</span></div><select id="scan"></select></div>
+</div>
+<div class="tk-row">
+  <div class="tk-seg" id="ports">
+    <label><input type="radio" name="ports" value="top" checked><span>top</span></label>
+    <label><input type="radio" name="ports" value="all"><span>all</span></label>
+    <label><input type="radio" name="ports" value="fast"><span>fast</span></label>
+    <label><input type="radio" name="ports" value="range"><span>range</span></label>
+    <label><input type="radio" name="ports" value="list"><span>list</span></label>
+  </div>
+  <input id="top" type="number" min="1" max="65535" value="1000" style="flex:0 0 90px">
+  <input id="range" value="1-65535" spellcheck="false" style="flex:0 0 120px" hidden>
+  <input id="list" value="80,443,22" spellcheck="false" style="flex:0 0 160px" hidden>
+  <select id="t" title="timing" style="flex:0 0 150px"></select>
+  <select id="v" title="verbosity" style="flex:0 0 120px"><option value="0">quiet</option><option value="1" selected>-v</option><option value="2">-vv</option></select>
+</div>
+<div class="tk-row tk-checks" id="flags">
+  <label><input type="checkbox" id="sv" checked> -sV version</label>
+  <label><input type="checkbox" id="svLight"> --version-light</label>
+  <label><input type="checkbox" id="sc" checked> -sC scripts</label>
+  <label><input type="checkbox" id="o"> -O OS</label>
+  <label><input type="checkbox" id="a"> -A aggressive</label>
+  <label><input type="checkbox" id="pn" checked> -Pn no ping</label>
+  <label><input type="checkbox" id="n"> -n no DNS</label>
+  <label><input type="checkbox" id="open" checked> --open</label>
+  <label><input type="checkbox" id="reason"> --reason</label>
+  <label><input type="checkbox" id="f"> -f fragment</label>
+</div>
+<div class="tk-row">
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>--script</span></div><input id="scripts" list="nse-cats" placeholder="default,vuln or http-*" spellcheck="false" autocomplete="off"><datalist id="nse-cats"></datalist></div>
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>--script-args</span></div><input id="scriptArgs" placeholder="user=admin,pass=..." spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:0 0 150px;margin:0"><div class="tk-label"><span>-oA output</span></div><input id="out" placeholder="scan" spellcheck="false" autocomplete="off"></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span>command</span><span class="r"><button type="button" class="tk-copy" data-copy="#outcmd">copy</button></span></div><textarea id="outcmd" readonly spellcheck="false" rows="2"></textarea></div>
+<details class="tk-details"><summary>NSE script categories</summary><table class="tk-list" id="nse"></table></details>

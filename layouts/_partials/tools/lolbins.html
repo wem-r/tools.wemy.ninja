@@ -1,0 +1,15 @@
+<div class="tk-row">
+  <input id="q" data-lol="{{ (partial "data/lolbins.html" .).RelPermalink }}" placeholder="search binaries and commands… (e.g. download, nmap, certutil, sudo)" spellcheck="false" autocomplete="off" style="flex:1;min-width:200px">
+  <div class="tk-seg" id="src">
+    <label><input type="radio" name="src" value="" checked><span>All</span></label>
+    <label><input type="radio" name="src" value="gtfobins"><span>GTFOBins</span></label>
+    <label><input type="radio" name="src" value="lolbas"><span>LOLBAS</span></label>
+    <label><input type="radio" name="src" value="wadcoms"><span>WADComs</span></label>
+  </div>
+</div>
+<div class="tk-msg" id="msg">loading…</div>
+<div class="tk-rev">
+  <nav class="tk-rev-list" id="list" aria-label="binaries"></nav>
+  <div class="tk-rev-out" id="detail"></div>
+</div>
+<p class="dim">Living-off-the-land binaries: trusted programs already on the host that can be abused. Data from GTFOBins (Unix), LOLBAS (Windows) and WADComs (Active Directory).</p>

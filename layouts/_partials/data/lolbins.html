@@ -1,0 +1,3 @@
+{{- /* GTFOBins + LOLBAS + WADComs, merged and minified (see assets/data/lolbins.json). */ -}}
+{{- $r := resources.Get "data/lolbins.json" | minify | fingerprint }}
+{{- return $r }}

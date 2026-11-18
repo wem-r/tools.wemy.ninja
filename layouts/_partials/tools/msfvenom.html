@@ -1,0 +1,22 @@
+<div class="tk-row">
+  <div class="tk-field" style="flex:2 1 340px;margin:0"><div class="tk-label"><span>payload</span><span class="r"><input id="pf" placeholder="filter…" spellcheck="false" autocomplete="off" style="width:120px;font-size:11px"></span></div><select id="payload" size="8"></select></div>
+  <div style="flex:1 1 220px;display:flex;flex-direction:column;gap:8px">
+    <div class="tk-field" id="f-lhost" style="margin:0"><div class="tk-label"><span>LHOST</span></div><input id="lhost" value="10.10.14.1" spellcheck="false" autocomplete="off"></div>
+    <div class="tk-field" id="f-rhost" style="margin:0" hidden><div class="tk-label"><span>RHOST (bind target)</span></div><input id="rhost" value="10.10.10.10" spellcheck="false"></div>
+    <div class="tk-field" id="f-lport" style="margin:0"><div class="tk-label"><span>LPORT</span></div><input id="lport" value="443" inputmode="numeric" spellcheck="false"></div>
+    <div class="tk-field" id="f-cmd" style="margin:0" hidden><div class="tk-label"><span>CMD</span></div><input id="cmd" value="calc.exe" spellcheck="false"></div>
+  </div>
+</div>
+<div class="tk-row">
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>format</span></div><select id="format"></select></div>
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>encoder</span></div><select id="encoder"></select></div>
+  <div class="tk-field" style="flex:0 0 90px;margin:0"><div class="tk-label"><span>iterations</span></div><input id="iter" type="number" min="0" value="0"></div>
+  <div class="tk-field" style="flex:0 0 110px;margin:0"><div class="tk-label"><span>arch</span></div><select id="arch"></select></div>
+</div>
+<div class="tk-row">
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>bad characters</span></div><input id="badchars" placeholder="\x00\x0a\x0d" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>output file (-o, optional)</span></div><input id="out" placeholder="shell.exe" spellcheck="false" autocomplete="off"></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span>msfvenom command</span><span class="r"><button type="button" class="tk-copy" data-copy="#outcmd">copy</button></span></div><textarea id="outcmd" readonly spellcheck="false" rows="2"></textarea></div>
+<div class="tk-field"><div class="tk-label"><span>catch it — Metasploit handler</span><span class="r"><button type="button" class="tk-copy" data-copy="#outh">copy</button></span></div><textarea id="outh" readonly spellcheck="false" rows="2"></textarea></div>
+<p class="dim">Generated in your browser. For authorised testing only — a payload built here still has to be delivered and run by you on a host you control or are allowed to test.</p>

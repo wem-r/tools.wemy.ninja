@@ -1,0 +1,3 @@
+{{- /* Vendor default credentials from DefaultCreds-cheat-sheet, minified. */ -}}
+{{- $r := resources.Get "data/default-creds.json" | minify | fingerprint }}
+{{- return $r }}

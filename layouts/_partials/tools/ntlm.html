@@ -1,0 +1,11 @@
+<div class="tk-field" style="max-width:420px"><div class="tk-label"><span>password</span></div><input id="pw" value="P@ssw0rd" spellcheck="false" autocomplete="off"></div>
+<table class="tk-kv" id="nt"></table>
+<div class="tk-sec">NetNTLMv2 (hashcat -m 5600)</div>
+<div class="tk-row">
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>username</span></div><input id="user" value="Administrator" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>domain</span></div><input id="domain" value="CORP" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:1 1 220px;margin:0"><div class="tk-label"><span>server challenge</span><span class="r"><button type="button" class="tk-btn" id="roll">🎲</button></span></div><input id="schal" spellcheck="false" autocomplete="off"></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span>NetNTLMv2 line</span><span class="r"><button type="button" class="tk-copy" data-copy="#v2">copy</button></span></div><textarea id="v2" readonly spellcheck="false" rows="3"></textarea></div>
+<table class="tk-kv" id="v2kv"></table>
+<p class="dim">The NT hash is MD4 of the UTF-16LE password. The NetNTLMv2 line is built with a random client-challenge blob so you can test a cracking setup end to end. All in your browser. (NTLMv1/LM are DES-based and not generated here.)</p>

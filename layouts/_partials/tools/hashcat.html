@@ -1,0 +1,23 @@
+<div class="tk-row">
+  <div class="tk-field" style="flex:2 1 340px;margin:0"><div class="tk-label"><span>hash type</span><span class="r"><input id="mf" placeholder="filter… (ntlm, bcrypt, 1800)" spellcheck="false" autocomplete="off" style="width:200px;font-size:11px"></span></div><select id="mode" size="7"></select></div>
+  <div style="flex:1 1 220px;display:flex;flex-direction:column;gap:8px">
+    <div class="tk-field" style="margin:0"><div class="tk-label"><span>attack mode</span></div><select id="attack"></select></div>
+    <div class="tk-field" style="margin:0"><div class="tk-label"><span>hash file</span></div><input id="hashfile" value="hashes.txt" spellcheck="false"></div>
+    <div class="tk-field" id="f-rule" style="margin:0"><div class="tk-label"><span>rules</span></div><select id="rule"></select></div>
+  </div>
+</div>
+<div class="tk-row">
+  <div class="tk-field" id="f-dict" style="flex:1;margin:0"><div class="tk-label"><span id="dict-l">wordlist</span></div><input id="dict" value="/usr/share/wordlists/rockyou.txt" spellcheck="false"></div>
+  <div class="tk-field" id="f-dict2" style="flex:1;margin:0" hidden><div class="tk-label"><span>second wordlist</span></div><input id="dict2" value="words2.txt" spellcheck="false"></div>
+  <div class="tk-field" id="f-mask" style="flex:1;margin:0" hidden><div class="tk-label"><span>mask</span></div><input id="mask" value="?u?l?l?l?l?d?d" spellcheck="false"></div>
+</div>
+<div class="tk-row tk-checks">
+  <label><input type="checkbox" id="opt"> -O optimised</label>
+  <label><input type="checkbox" id="user"> --username</label>
+  <label><input type="checkbox" id="show"> --show (print cracked)</label>
+  <span style="display:inline-flex;align-items:center;gap:4px">-w <select id="workload"><option>1</option><option selected>3</option><option>4</option></select></span>
+</div>
+<div class="tk-field"><div class="tk-label"><span>hashcat</span><span class="r"><button type="button" class="tk-copy" data-copy="#outhc">copy</button></span></div><textarea id="outhc" readonly spellcheck="false" rows="2"></textarea></div>
+<div class="tk-field"><div class="tk-label"><span>John the Ripper</span><span class="r"><button type="button" class="tk-copy" data-copy="#outjohn">copy</button></span></div><textarea id="outjohn" readonly spellcheck="false" rows="2"></textarea></div>
+<div id="ex" class="dim" style="font-size:12px"></div>
+<details class="tk-details"><summary>mask charsets</summary><table class="tk-list" id="masks"></table></details>

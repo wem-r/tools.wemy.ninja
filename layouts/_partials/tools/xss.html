@@ -1,0 +1,7 @@
+<div class="tk-row">
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>collector host (replaces HOST)</span></div><input id="host" placeholder="attacker.com or 10.10.14.1:8000" spellcheck="false" autocomplete="off"></div>
+  <div class="tk-field" style="flex:0 0 200px;margin:0"><div class="tk-label"><span>encode for context</span></div><select id="enc"></select></div>
+  <input id="filter" placeholder="filter…" spellcheck="false" autocomplete="off" style="flex:1;min-width:120px">
+</div>
+<div id="out"></div>
+<p class="dim">For testing reflection and filtering on apps you are authorised to test. Payloads call <code>alert()</code> as a harmless proof; the exfil ones use the collector host above.</p>
