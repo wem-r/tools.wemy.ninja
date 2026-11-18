@@ -1,0 +1,17 @@
+<div class="tk-row">
+  <div class="tk-field" style="flex:0 0 160px;margin:0"><div class="tk-label"><span>input format</span></div><select id="fmt"><option value="auto">auto-detect</option><option value="hex">hex</option><option value="base64">base64</option><option value="decimal">decimal</option></select></div>
+  <div class="tk-field" style="flex:0 0 220px;margin:0"><div class="tk-label"><span>bad characters</span></div><input id="bad" value="00" spellcheck="false" autocomplete="off"></div>
+</div>
+<div class="tk-field"><div class="tk-label"><span>bytes — paste hex, \x.., base64 or decimal</span></div><textarea id="in" spellcheck="false" rows="4">\xfc\x48\x83\xe4\xf0\xe8\xc0\x00\x00\x00\x41\x51\x41\x50\x52\x51</textarea></div>
+<div class="tk-msg" id="msg"></div>
+<table class="tk-kv" id="stats"></table>
+<div id="badreport"></div>
+<div class="tk-sec">byte map — which values appear (<span class="dim">bad = flagged, •  = present</span>)</div>
+<div class="tk-grid256" id="grid"></div>
+<div class="tk-sec">hexdump</div>
+<div class="tk-field"><div class="tk-label"><span></span><span class="r"><button type="button" class="tk-copy" data-copy="#dump">copy</button></span></div><textarea id="dump" readonly spellcheck="false" rows="8" style="white-space:pre;overflow-wrap:normal"></textarea></div>
+<div class="tk-row">
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>raw hex</span><span class="r"><button type="button" class="tk-copy" data-copy="#rawhex">copy</button></span></div><textarea id="rawhex" readonly spellcheck="false" rows="2"></textarea></div>
+  <div class="tk-field" style="flex:1;margin:0"><div class="tk-label"><span>base64</span><span class="r"><button type="button" class="tk-copy" data-copy="#b64">copy</button></span></div><textarea id="b64" readonly spellcheck="false" rows="2"></textarea></div>
+</div>
+<p class="dim">Analysis only — nothing is run. The byte map is the quick way to find bad-character-free bytes: anything not lit never appears in your payload. Generate the payload with the MSFVenom builder, or <code>xxd -i</code> / <code>msfvenom -f c</code> for language arrays.</p>
