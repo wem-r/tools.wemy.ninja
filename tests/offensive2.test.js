@@ -4,10 +4,9 @@ import assert from 'node:assert/strict';
 import { cisco7Decode, cisco7Encode, juniperDecode, juniperEncode } from '../assets/tools/lib/cisco7.js';
 import { lmHash, md5crypt, generate } from '../assets/tools/lib/targethash.js';
 import { extract, defang, refang } from '../assets/tools/lib/ioc.js';
-import { interpretations, toMs, fromMs } from '../assets/tools/lib/timestamp.js';
+import { parseTime, formats } from '../assets/tools/lib/timefmt.js';
 import { maskKeyspace, charsetSize, keyspace, human } from '../assets/tools/lib/cracktime.js';
 import { buildSPF, buildDMARC, explain } from '../assets/tools/lib/dmarc.js';
-import { strength } from '../assets/tools/lib/pwstrength.js';
 import { TOOLS } from '../assets/tools/lib/impacket.js';
 import { CRADLES } from '../assets/tools/lib/cradle.js';
 import { sigma, yara } from '../assets/tools/lib/rules.js';
@@ -44,12 +43,14 @@ test('IOC extract + defang', () => {
 
 test('timestamp conversions', () => {
   // 2021-01-01T00:00:00Z = unix 1609459200
-  const ms = toMs(1609459200, 'unix');
+  const { ms } = parseTime('1609459200', 'auto');
   assert.equal(new Date(ms).toISOString(), '2021-01-01T00:00:00.000Z');
-  assert.equal(fromMs(ms, 'filetime'), 132539328000000000);
-  assert.equal(fromMs(ms, 'webkit'), 13253932800000000);
-  const it = interpretations(1609459200);
-  assert.equal(it.find((x) => x.id === 'unix').iso, '2021-01-01T00:00:00.000Z');
+  assert.equal(parseTime('2021-01-01T00:00:00Z').ms, ms); // parses ISO strings too
+  const f = Object.fromEntries(formats(ms, Date.UTC(2021, 0, 1)));
+  assert.equal(f['Windows FILETIME / LDAP'], '132539328000000000');
+  assert.equal(f['WebKit / Chrome (µs since 1601)'], '13253932800000000');
+  assert.equal(f['.NET ticks (100 ns since 0001)'], '637450560000000000');
+  assert.equal(f['ISO 8601 (UTC)'], '2021-01-01T00:00:00.000Z');
 });
 
 test('crack-time maths', () => {
@@ -65,13 +66,6 @@ test('SPF / DMARC builder + explain', () => {
   assert.equal(buildDMARC({ domain: 'x.com', p: 'reject', rua: 'a@x.com' }).value, 'v=DMARC1; p=reject; rua=mailto:a@x.com');
   assert.equal(explain('v=spf1 -all').type, 'SPF');
   assert.equal(explain('v=DMARC1; p=none').type, 'DMARC');
-});
-
-test('password strength', () => {
-  assert.equal(strength('password').score, 0);
-  assert.ok(strength('Tr0ub4dour&3xplanation!').score >= 3);
-  assert.ok(strength('aaaaaa').score === 0);
-  assert.ok(strength('correct horse battery staple').bits > 40);
 });
 
 test('impacket / cradle / rules builders', () => {

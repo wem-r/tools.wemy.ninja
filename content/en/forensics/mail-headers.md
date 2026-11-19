@@ -5,4 +5,5 @@ tool: mail-headers
 date: 2026-11-16
 weight: 1
 tags: [email, spf, dkim, dmarc]
+aliases: ["/blue/email-headers/"]
 ---

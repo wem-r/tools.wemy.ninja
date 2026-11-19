@@ -60,6 +60,10 @@ export function formats(ms, now = Date.now()) {
     ['RFC 2822 / HTTP', d.toUTCString()],
     ['Relative', relative(ms, now)],
     ['Windows FILETIME / LDAP', toFiletime(ms).toString()],
+    ['WebKit / Chrome (µs since 1601)', (BigInt(Math.round(ms) + 11644473600000) * 1000n).toString()],
+    ['.NET ticks (100 ns since 0001)', (BigInt(Math.round(ms) + 62135596800000) * 10000n).toString()],
+    ['Mac HFS+ (s since 1904)', String(Math.round(ms / 1000 + 2082844800))],
+    ['Cocoa / Mac absolute (s since 2001)', String(Math.round((ms - 978307200000) / 1000))],
     ['Day of year / ISO week', `${dayOfYear(d)} / W${isoWeek(d)}`],
   ];
 }

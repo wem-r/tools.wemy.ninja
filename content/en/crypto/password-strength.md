@@ -5,4 +5,5 @@ tool: password-strength
 date: 2026-11-16
 weight: 11
 tags: [password, entropy]
+aliases: ["/blue/pw-strength/"]
 ---
