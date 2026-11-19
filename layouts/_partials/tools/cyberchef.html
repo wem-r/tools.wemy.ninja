@@ -2,7 +2,7 @@
 {{- /* CyberChef is downloaded from the GCHQ release by the deploy workflow into static/vendor/cyberchef/ (not in git). */ -}}
 {{- if fileExists "static/vendor/cyberchef/index.html" }}
 <iframe class="tk-cyberchef" src="/vendor/cyberchef/" title="CyberChef" loading="lazy"></iframe>
-<p class="dim">CyberChef {{ getenv "HUGO_CYBERCHEF_VERSION" }} runs in this frame, entirely in your browser. <a href="/vendor/cyberchef/" target="_blank">open it full screen ↗</a></p>
+<p class="dim">CyberChef {{ getenv "HUGO_CYBERCHEF_VERSION" }} — <a href="/vendor/cyberchef/" target="_blank">open full screen ↗</a></p>
 {{- else }}
 <p class="tk-msg warn">CyberChef is not in this build: the deploy workflow downloads it into <code>static/vendor/cyberchef/</code>. Run <code>gh release download v11.5.0 -R gchq/CyberChef -p '*.zip'</code> and unzip it there to try it locally.</p>
 {{- end }}
