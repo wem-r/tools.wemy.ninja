@@ -1,0 +1,33 @@
+{{- /* Tool sites (params.wem.aside = "info"):
+     [3] info — what the page is, its tags, related KB note, credits, then params.wem.about lines
+     [4] favourites — starred and recently opened pages, kept in this browser only (wm.js);
+         left out with params.wem.layout = "left" (info goes under the tree).
+     params.wem.info_desc = false: don't repeat a page's description (it is already under its title). */ -}}
+{{- $wem := site.Params.wem }}
+<aside class="wm-t wm-t-toc" data-tab="toc" aria-label="Information">
+  <div class="wm-th"><span>[3] info</span><span>{{ cond .IsHome "~" (path.Base (strings.TrimSuffix "/" .RelPermalink)) }}</span></div>
+  <div class="wm-tb wm-info">
+    {{- if or (not .IsPage) (ne $wem.info_desc false) }}
+    {{- with .Params.summary | default .Description }}<p>{{ . | markdownify }}</p>{{ end }}
+    {{- end }}
+    {{- if not .IsPage }}
+    {{- $n := len (where .RegularPagesRecursive "Params.tool" "!=" nil) }}
+    {{- if $n }}<p class="dim">{{ $n }} {{ cond (eq $n 1) "tool" "tools" }} in here</p>{{ end }}
+    {{- end }}
+    {{- with .GetTerms "tags" }}<p class="wm-info-tags">{{ range . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a> {{ end }}</p>{{ end }}
+    {{- with .Params.kb }}<p class="dim">KB: {{ range $i, $l := . }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}">{{ $l.title }}</a>{{ end }}</p>{{ end }}
+    {{- with .Params.credit }}<p class="dim">{{ . | markdownify }}</p>{{ end }}
+    {{- with $wem.about }}<div class="wm-about">{{ range . }}<p>{{ . | markdownify }}</p>{{ end }}</div>{{ end }}
+  </div>
+</aside>
+{{- if ne $wem.layout "left" }}
+
+<aside class="wm-t wm-t-graph" data-tab="graph" aria-label="Favourites">
+  <div class="wm-th"><span>[4] favourites</span><span class="wm-fav-n">★ 0</span></div>
+  <div class="wm-tb wm-favs" data-recent-u="{{ if .IsPage }}{{ .RelPermalink }}{{ end }}" data-recent-t="{{ path.Base (strings.TrimSuffix "/" .RelPermalink) }}" data-recent-c="{{ lower .CurrentSection.Title }}">
+    <div class="wm-fav-list"><p class="dim">star a tool with ☆ to pin it here</p></div>
+    <p class="dim wm-fav-h">recent</p>
+    <div class="wm-recent-list"></div>
+  </div>
+</aside>
+{{- end }}
